@@ -6,9 +6,13 @@ class Game {
 
     }
 
-    select() {
-        var pick;
-        if (player)
+    select(parameter) {
+        for (var i = 0; i < this.boardPositions.length; i++) {
+            if (parameter === this.boardPositions[i]) {
+                this.boardPositions.splice(i, 1);
+                player.chosenSpots.push(parameter);  //how do I differentiate which player? They're going to have discrete arrays
+            }
+        }
 
     }
     
@@ -22,3 +26,29 @@ class Game {
 //check game board data for wins
 //detect a draw (no wins)
 //reset game board for a new game
+
+//COPIED FROM MY REPLIT:
+//***Manipulating boardPosition Array and player's chosenSpots Array: ***/
+// var boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// var playerArray = [];
+// var player;
+// var number;
+
+// function select(number) {
+//   for (var i = 0; i < boardPositions.length; i++) {
+//     if (number === boardPositions[i]) {
+//       console.log(i);
+//       console.log('what is it: ' + number);
+//       boardPositions.splice(i, 1);
+//       playerArray.push(number);
+//     } 
+//   }
+// }
+
+// select(2);
+// select(9);
+// select(3);
+// select(5);
+// select(8);
+// console.log(boardPositions);
+// console.log(playerArray);
