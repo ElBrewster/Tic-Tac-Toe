@@ -13,7 +13,8 @@ class Game {
                 player.chosenSpots.push(parameter);  //how do I differentiate which player? They're going to have discrete arrays
             }
         }
-
+            //else &/or return stmt wasn't working in replit, but I need here the piece where a player can't select something not there. 
+            //I might not need anything? Since there's nothing to pull from the Array if the position has already been selected.
     }
     
     var playerThem = new Player(id, token);
