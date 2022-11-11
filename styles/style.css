@@ -13,36 +13,111 @@
 }
 
 body {
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
 }
 
 header {
+    height: 15%;
+    width: 100%;
     display: block;
+    background-color: blanchedalmond;
 }
 
 main {
+    height: 85%;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    background-color: rgb(180, 229, 229);
 }
-
+/* ---------------------------------------------------------------- */
 .other-content {
+    width: 40%;
     display: flex;
     flex-direction: column;
 }
+
+form {
+    height: 50%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+/* don't forget ::placeholder, see ideabox */
+aside {
+    height: 50%;
+    width: 100%;
+    background-color: azure;
+}
+/* ---------------------------------------------------------------------- */
 /* button stuff goes here */
-.button-field {
+/* .button-field {
+    width: 60%;
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    align-content: center;
+    align-items: center;
+} */
+.numpad-7 {
+    grid-area: button7;
+}
+.numpad-8 {
+    grid-area: button8;
+}
+.numpad-9 {
+    grid-area: button9;
+}
+.numpad-4 {
+    grid-area: button4;
+}
+.numpad-5 {
+    grid-area: button5;
+}
+.numpad-6 {
+    grid-area: button6;
+}
+.numpad-1 {
+    grid-area: button1;
+}
+.numpad-2 {
+    grid-area: button2;
+}
+.numpad-3 {
+    grid-area: button3;
+}
+.button-field {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "button7 button8 button9"
+        "button4 button5 button6"
+        "button1 button2 button3";
+    gap: 1em;
+    background-color: bisque;
+    
+
 }
     /* ^that's technically a section^ */
 
-.numpad-9 {
+/* .numpad-9 {
+    width: 10em;
+    height: 10em;
+    text-align: center;
     transition-duration: 0.4s;
-}
-.numpad-9:hover {
+} */
+/* .numpad-9:hover {
+    width: 10em;
+    height: 10em;
+    /* ^make sure this matches the above numpad-9 info^ */
     background-color: rgb(225, 112, 112);
     color: white;
-}
+} */
 
 /* .disabled { ---> figure out how to activate this, solves the double-select problem
     opacity:  0.6;
