@@ -11,3 +11,31 @@
     src: url();
     font-weight: normal;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: block;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+.other-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-field {
+    display: flex;
+}
+
+button:focus {
+    font-weight: bold;
+}
+/* this is more of a placeholder ^ */
