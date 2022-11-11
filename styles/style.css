@@ -43,7 +43,11 @@ main {
 form {
     height: 50%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     background-color: antiquewhite;
+    
 }
 /* don't forget ::placeholder, see ideabox */
 aside {
@@ -98,7 +102,7 @@ aside {
         "button7 button8 button9"
         "button4 button5 button6"
         "button1 button2 button3";
-    gap: 1em;
+    gap: 2em;
     background-color: bisque;
     
 
@@ -111,13 +115,52 @@ aside {
     text-align: center;
     transition-duration: 0.4s;
 } */
-/* .numpad-9:hover {
-    width: 10em;
-    height: 10em;
-    /* ^make sure this matches the above numpad-9 info^ */
-    background-color: rgb(225, 112, 112);
+/* .numpad-7,
+.numpad-8,
+.numpad-9,
+.numpad-4,
+.numpad-5,
+.numpad-6,
+.numpad-1,
+.numpad-2,
+.numpad-3 */
+
+.numpad-7:hover {
+    background-color: rgb(250, 178, 178);
     color: white;
-} */
+} 
+.numpad-8:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-9:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-4:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-5:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-6:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-1:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-2:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
+.numpad-3:hover {
+    background-color: rgb(250, 178, 178);
+    color: white;
+} 
 
 /* .disabled { ---> figure out how to activate this, solves the double-select problem
     opacity:  0.6;
