@@ -16,3 +16,5 @@ class Player {
 //per Architecture instructions, Player file must include methods:
 //constructor with id, token, and wins
 //increaseWins() to count player's wins
+
+//tokens: hot or cold? to be warm or cool button tones?

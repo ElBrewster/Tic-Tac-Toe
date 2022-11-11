@@ -62,7 +62,9 @@ class Game {
 // // console.log(dinner);
 // dinnerStr = dinner.toString();
 // // console.log(dinnerStr);
+// winEval();-->
 // if(dinnerStr.includes('1') && dinnerStr.includes('5') && dinnerStr.includes('9')) {
-//   console.log(dinnerStr);
+//   console.log(dinnerStr); ---> then trigger a win method (banner, timeout, then reset stuff)
+    //ADD DRAW HERE (like if a player array has 5 or more index positions, declare draw)(is it 5 or 4?)
 // }
 // so do this for every combo ^^
