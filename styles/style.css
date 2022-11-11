@@ -30,10 +30,24 @@ main {
     display: flex;
     flex-direction: column;
 }
-
+/* button stuff goes here */
 .button-field {
     display: flex;
 }
+    /* ^that's technically a section^ */
+
+.numpad-9 {
+    transition-duration: 0.4s;
+}
+.numpad-9:hover {
+    background-color: rgb(225, 112, 112);
+    color: white;
+}
+
+/* .disabled { ---> figure out how to activate this, solves the double-select problem
+    opacity:  0.6;
+    cursor: not-allowed;
+} */
 
 button:focus {
     font-weight: bold;
