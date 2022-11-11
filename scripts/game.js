@@ -53,3 +53,16 @@ class Game {
 // select(8);
 // console.log(boardPositions);
 // console.log(playerArray);
+//-------------------------
+// //*** WORKING THROUGH WIN RECORDING AND RECOGNITION ***//
+// var winCons = [123, 147, 159, 258, 357, 369, 456, 789];
+// var winner = [4, 5, 9, 1];
+// winner.sort();
+// var dinner = winner.join('');
+// // console.log(dinner);
+// dinnerStr = dinner.toString();
+// // console.log(dinnerStr);
+// if(dinnerStr.includes('1') && dinnerStr.includes('5') && dinnerStr.includes('9')) {
+//   console.log(dinnerStr);
+// }
+// so do this for every combo ^^
