@@ -1,9 +1,9 @@
-// var Game = require("./g                    ame.js");
+var Game = require("./game.js");
 
 class Player {
-    constructor(id, token) {
-        this.id = id;
-        this.token = token;
+    constructor(nickname, icon) {
+        this.id = nickname;
+        this.token = icon;
         this.wins = 0;
         this.chosenSpots = [];
     }

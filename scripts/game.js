@@ -6,20 +6,22 @@ class Game {
 
     }
 
-    select(parameter) {
-        for (var i = 0; i < this.boardPositions.length; i++) {
-            if (parameter === this.boardPositions[i]) {
-                this.boardPositions.splice(i, 1);
-                player.chosenSpots.push(parameter);  //how do I differentiate which player? They're going to have discrete arrays
-            }
-        }
-            //else &/or return stmt wasn't working in replit, but I need here the piece where a player can't select something not there. 
-            //I might not need anything? Since there's nothing to pull from the Array if the position has already been selected.
-    }
-    
-    var playerThem = new Player(id, token);
-    var playerOther = new Player(id, token);
 }
+
+
+// squarePicker(parameter) {
+//     for (var i = 0; i < this.boardPositions.length; i++) {
+//         if (parameter === this.boardPositions[i]) {
+//             this.boardPositions.splice(i, 1);
+//             player.chosenSpots.push(parameter);  //how do I differentiate which player? They're going to have discrete arrays
+//         }
+//     }
+//         //else &/or return stmt wasn't working in replit, but I need here the piece where a player can't select something not there. 
+//         //I might not need anything? Since there's nothing to pull from the Array if the position has already been selected.
+// }
+
+// var playerThem = new Player(id, token);
+// var playerOther = new Player(id, token);
 
 //per Architecture instructions, Game file must include:
 //2 Player instances

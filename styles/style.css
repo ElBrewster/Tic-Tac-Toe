@@ -23,7 +23,7 @@ header {
     height: 15%;
     width: 100%;
     display: block;
-    background-color: blanchedalmond;
+    background-color: rgb(145, 114, 246);
 }
 
 main {
@@ -31,7 +31,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: rgb(180, 229, 229);
+    background-color: rgb(225, 180, 229);
 }
 /* ---------------------------------------------------------------- */
 .other-content {
@@ -95,6 +95,7 @@ aside {
 }
 .button-field {
     width: 60%;
+    padding: 1em;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -103,7 +104,7 @@ aside {
         "button4 button5 button6"
         "button1 button2 button3";
     gap: 2em;
-    background-color: bisque;
+    background-color: rgb(162, 207, 239);
     
 
 }
@@ -170,4 +171,4 @@ aside {
 button:focus {
     font-weight: bold;
 }
-/* this is more of a placeholder ^ */
+/* ^this is more of a placeholder ^ */
