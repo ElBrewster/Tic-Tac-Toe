@@ -16,9 +16,11 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
+var allNumPadBtns = document.querySelector(".numpadBtn")
+//^^should I be doing something more consistent, not referring to the generic class instead of specific iD here? It's the same use in the CSS, but I don't see a way around it.^^
 // --------------------------------------------------------
 startBtn.addEventListener("click", startNewGame);
-btn7.addEventListener("click", squarePicker(spot));
+allNumPadBtns.addEventListener("click", squarePicker(spot));
 // ---> how do I assign the #7 to button 7 always?
 // --------------------------------------------------------
 var them;
@@ -31,10 +33,10 @@ function startNewGame(them, theirToken, other, otherToken) {
     var gamerThem = new Player(them, theirToken);
     var gamerOther = new Player(other, otherToken);
     var tictacGame = new Game();
-    tictacGame.playerTurn();
+    tictacGame.setPlayerTurn(gamerThem, gamerOther);
 }
 
-function playerTurn() {
+function setPlayerTurn() {
     //switch turn -->this probably goes in our Game class?
     if(gamerThem.tokenPlacement === false) {
         //run squarePicker, in squarePicker switch to "true"
@@ -48,14 +50,15 @@ function playerTurn() {
     }
 }
 
-
+var spot;
 function squarePicker(spot) {
+
     for (var i = 0; i < tictacGame.boardPositions.length; i++) {
         if (spot === tictacGame.boardPositions[i]) {
             tictacGame.boardPositions.splice(i, 1);
             gamerThem.chosenSpots.push(spot); 
             console.log(gamerThem.chosenSpots);
-             //how do I differentiate which player? They're going to have discrete arrays
+            //add in a "disabled" state for the button clicked
         }
     }
 

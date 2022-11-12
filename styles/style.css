@@ -140,11 +140,11 @@ button:focus {
 .numpad-2,
 .numpad-3 */
 
-.numpad-7:hover {
+.numpadBtn:hover {
     background-color: rgb(250, 178, 178);
     color: white;
 } 
-.numpad-8:hover {
+/* .numpad-8:hover {
     background-color: rgb(250, 178, 178);
     color: white;
 } 
@@ -152,7 +152,7 @@ button:focus {
     background-color: rgb(250, 178, 178);
     color: white;
 } 
-.numpad-4:hover {
+ .numpad-4:hover { 
     background-color: rgb(250, 178, 178);
     color: white;
 } 
@@ -175,7 +175,8 @@ button:focus {
 .numpad-3:hover {
     background-color: rgb(250, 178, 178);
     color: white;
-} 
+}  */
+
 .start-button {
     width: 10em;
     padding: 1em 2em;
