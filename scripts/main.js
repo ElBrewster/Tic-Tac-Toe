@@ -38,9 +38,13 @@ function playerTurn() {
     //switch turn -->this probably goes in our Game class?
     if(gamerThem.tokenPlacement === false) {
         //run squarePicker, in squarePicker switch to "true"
+        gamerThem.tokenPlacement = true;
+        gamerOther.tokenPlacement = false;
     }
     if(gamerOther.tokenPlacement === false) {
         //run squarePicker, in squarePicker switch to "true"
+        gamerOther.tokenPlacement = true;
+        gamerThem.tokenPlacement = false;
     }
 }
 
