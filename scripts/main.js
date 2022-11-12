@@ -18,7 +18,8 @@ var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
 // --------------------------------------------------------
 startBtn.addEventListener("click", startNewGame);
-btn7.addEventListener("click", squarePicker(7));
+btn7.addEventListener("click", squarePicker(spot));
+// ---> how do I assign the #7 to button 7 always?
 // --------------------------------------------------------
 var them;
 var theirToken;
@@ -30,11 +31,17 @@ function startNewGame(them, theirToken, other, otherToken) {
     var gamerThem = new Player(them, theirToken);
     var gamerOther = new Player(other, otherToken);
     var tictacGame = new Game();
-    //set turn
+    tictacGame.playerTurn();
 }
 
 function playerTurn() {
     //switch turn -->this probably goes in our Game class?
+    if(gamerThem.tokenPlacement === false) {
+        //run squarePicker, in squarePicker switch to "true"
+    }
+    if(gamerOther.tokenPlacement === false) {
+        //run squarePicker, in squarePicker switch to "true"
+    }
 }
 
 
