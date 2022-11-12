@@ -1,4 +1,3 @@
-var Game = require("./game.js");
 
 class Player {
     constructor(nickname, icon) {

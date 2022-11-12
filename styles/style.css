@@ -7,7 +7,8 @@
 }
 
 @font-face {
-    font-family: "Mulish", sans-serif;
+    color:rgb(66, 7, 69);
+    font-family: sans-serif;
     src: url();
     font-weight: normal;
 }
@@ -46,6 +47,7 @@ form {
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-content: space-around;
     background-color: antiquewhite;
     
 }
@@ -66,6 +68,18 @@ aside {
     align-content: center;
     align-items: center;
 } */
+button {
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(178, 119, 181);
+    box-shadow: 0 9px #999;
+    cursor: pointer;
+}
+button:focus {
+    font-weight: bold;
+}
+
 .numpad-7 {
     grid-area: button7;
 }
@@ -162,13 +176,25 @@ aside {
     background-color: rgb(250, 178, 178);
     color: white;
 } 
+.start-button {
+    width: 10em;
+    padding: 1em 2em;
+}
+.start-button:hover {
+    background-color: aqua;
+}
+.start-button:active {
+    background-color: blue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
+.start-button:disabled {
+    background-color: rgb(82, 82, 175);
+}
 /* .disabled { ---> figure out how to activate this, solves the double-select problem
     opacity:  0.6;
     cursor: not-allowed;
 } */
 
-button:focus {
-    font-weight: bold;
-}
 /* ^this is more of a placeholder ^ */
