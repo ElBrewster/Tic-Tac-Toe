@@ -17,7 +17,7 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
-var allNumPadBtns = document.querySelectorAll(".numpadBtn");
+// var allNumPadBtns = document.querySelectorAll(".numpadBtn");
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
 btn7.addEventListener("click", whatever);
