@@ -1,21 +1,12 @@
 
 class Game {
-    constructor(playerObj1, playerObj2, gameObj1) {
+    constructor(player1, player2) {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        this.playerX = playerObj1;
-        this.playerO = playerObj2;
-        this.newGame = gameObj1;
+        this.playerX = `${player1.id}: ${player1.icon}` || "heart";
+        this.playerO = `${player2.id}: ${player2.icon}` || "star";
+        // this.newGame = gameObj1;
         this.gameNo = 0;
         this.draw = false;
-    } 
-
-    startNewGame(playerObj1, playerObj2, gameObj1) {
-        var gamerThem = new Player(playerObj1);
-        var gamerOther = new Player(playerObj2);
-        var ticTacGame = new Game();
-
-        this.setPlayerTurn();
-        this.gameNo++;
     } 
 
     setPlayerTurn(player1, player2) {
