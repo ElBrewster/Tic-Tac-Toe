@@ -11,15 +11,15 @@ class Game {
     } 
 
     setPlayerTurn(player1, player2) {
-        var spot;
+        var spotNumber;
         if(player1.tokenPlacement === false) {
-            player1.squarePicker(player1, spot);
+            player1.squarePicker(spotNumber);
             player1.tokenPlacement = true;
             player2.tokenPlacement = false;
             //banner function to say who's turn it is
         }
         if(player2.tokenPlacement === false) {
-            player2.squarePicker(player2, spot);
+            player2.squarePicker(spotNumber);
             player2.tokenPlacement = true;
             player1.tokenPlacement = false;
             //banner function to say who's turn it is
@@ -27,7 +27,7 @@ class Game {
         console.log(player1, player2);
     }
     
-    gameEndCheck9() {
+    gameEndCheck() {
         if (newGame.boardPositions.length <= 5) {
             newGame.winEval();
             newGame.drawEval(); 
@@ -38,12 +38,21 @@ class Game {
         this.setPlayerTurn();
     }
     
-    winEval() {
-        var winner = [4, 5, 9, 1]; 
-        // -->probably refer to our player instances to refer to their array
-        winner.sort();
-        var dinner = winner.join("");
-        var dinnerStr = dinner.toString();
+    winEval(player1, player2) {
+        player1.chosenSpots.sort();
+        console.log(player1.chosenSpots);
+        player2.chosenSpots.sort();
+        console.log(player2.chosenSpots);
+        var chosenSpots1 = player1.chosenSpots.join("");
+        var chosenSpots2 = player2.chosenSpots.join("");
+        var chosenSpots1Str = chosenSpots1.toString();
+        var chosenSpots2Str = chosenSpots2.toString();
+        console.log(chosenSpots1Str, chosenSpots2Str);
+        // var winner = [4, 5, 9, 1]; 
+        // // -->probably refer to our player instances to refer to their array
+        // winner.sort();
+        // var dinner = winner.join("");
+        // var dinnerStr = dinner.toString();
         if(dinnerStr.includes("1") && dinnerStr.includes("2") && dinnerStr.includes("3")) {
             console.log(dinnerStr);
         } else if(dinnerStr.includes("1") && dinnerStr.includes("4") && dinnerStr.includes("7")) {

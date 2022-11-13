@@ -4,6 +4,7 @@
 var player1;
 var player2;
 var newGame;
+var spotNumber;
 // --------------------------------------------------------
 var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelector("#buttonField");
@@ -19,15 +20,15 @@ var btn3 = document.querySelector("#numPad3");
 var allNumPadBtns = document.querySelectorAll(".numpadBtn");
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
-btn7.addEventListener("click", squarePicker(player, 7));
-btn8.addEventListener("click", squarePicker(player, 8));
-btn9.addEventListener("click", squarePicker(player, 9));
-btn4.addEventListener("click", squarePicker(player, 4));
-btn5.addEventListener("click", squarePicker(player, 5));
-btn6.addEventListener("click", squarePicker(player, 6));
-btn1.addEventListener("click", squarePicker(player, 1));
-btn2.addEventListener("click", squarePicker(player, 2));
-btn3.addEventListener("click", squarePicker(player, 3));
+btn7.addEventListener("click", whatever);
+btn8.addEventListener("click", whatever);
+btn9.addEventListener("click", whatever);
+btn4.addEventListener("click", whatever);
+btn5.addEventListener("click", whatever);
+btn6.addEventListener("click", whatever);
+btn1.addEventListener("click", whatever);
+btn2.addEventListener("click", whatever);
+btn3.addEventListener("click", whatever);
 // --------------------------------------------------------
 
 function startBtnInit() {
@@ -37,11 +38,16 @@ function startBtnInit() {
     player2 = new Player('Lex', 'stinky');
     newGame = new Game(player1, player2);
     // newGame.gameNo++;
-    newGame.setPlayerTurn(player1, player2);
+    // newGame.setPlayerTurn(player1, player2);
     //banner announcement
+    console.log(player1, player2, newGame);
 
 }
 
+function whatever() {
+    //how do I attach specific variable to these eventListeners? or what even am I doing here?
+    console.log(newGame);
+} 
 //something that runs squarePicker so that it loops through turn switches until positions filled at 9
 
 function bannerUpdate () {
