@@ -45,6 +45,7 @@ form {
     height: 50%;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-content: center;
     justify-content: space-around;
@@ -52,6 +53,12 @@ form {
     
 }
 /* don't forget ::placeholder, see ideabox */
+.submit-button,
+.user1,
+.user2 {
+    width: 50%;
+}
+
 aside {
     height: 50%;
     width: 100%;
