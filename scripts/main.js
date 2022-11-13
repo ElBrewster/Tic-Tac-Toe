@@ -1,4 +1,6 @@
-
+// var player1 = new Player('Rex', 'smelly');
+// var player2 = new Player('Lex', 'stinky');
+// var newGame = new Game(player1, player2);
 var player1;
 var player2;
 var newGame;
@@ -41,22 +43,6 @@ function startBtnInit() {
 }
 
 //something that runs squarePicker so that it loops through turn switches until positions filled at 9
-function squarePicker(player1clicka, spot) {
-        var spot = btnchoice; 
-        var player1clicka = theplayeratm;
-        for (var i = 0; i < newGame.boardPositions.length; i++) {
-            if (spot === newGame.boardPositions[i]) {
-                newGame.boardPositions.splice(i, 1);
-                player1clicka.chosenSpots.push(spot); 
-                console.log(player1clicka.chosenSpots);
-                //add in a "disabled" state for the button clicked perhaps
-        }
-        if (newGame.boardPositions.length <= 5) {
-            newGame.winEval();
-            newGame.drawEval(); 
-        }
-    }
-}
 
 function bannerUpdate () {
     console.log(bannerstuff);
