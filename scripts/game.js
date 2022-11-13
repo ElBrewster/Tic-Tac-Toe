@@ -7,7 +7,7 @@ class Game {
         this.gameNo = 0;
         this.draw = false;
         this.firstTurn = player1;
-        //reassign to 2 at reset
+        //^^ reassign to 2 at reset
     } 
 
     setPlayerTurn(player1, player2) {
