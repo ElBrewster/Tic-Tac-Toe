@@ -16,11 +16,11 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
-var allNumPadBtns = document.querySelector(".numpadBtn")
-//^^should I be doing something more consistent, not referring to the generic class instead of specific iD here? It's the same use in the CSS, but I don't see a way around it.^^
+var allNumPadBtns = document.querySelectorAll(".numpadBtn");
 // --------------------------------------------------------
 startBtn.addEventListener("click", startNewGame);
-allNumPadBtns.addEventListener("click", squarePicker(spot));
+btn7.addEventListener("click", squarePicker(spot));
+
 // ---> how do I assign the #7 to button 7 always?
 // --------------------------------------------------------
 var them;
