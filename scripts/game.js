@@ -22,23 +22,6 @@ class Game {
         }
         console.log(player1, player2);
     }
-// need some way to have this ^^ run every time there is tokenPlacement/buttonclick of our numpad
-// probably with a DOM trigger?
-    squarePicker(click) {
-        var player;
-        for (var i = 0; i < this.boardPositions.length; i++) {
-            if (click === this.boardPositions[i]) {
-                this.boardPositions.splice(i, 1);
-                player.chosenSpots.push(click); 
-                console.log(player.chosenSpots);
-                //add in a "disabled" state for the button clicked, or do this in the DOM
-            }
-        }
-        if (this.boardPositions.length <= 5) {
-            this.winEval();
-            this.drawEval(); 
-        }
-    }
 
     switchPlayerTurn() {
         this.setPlayerTurn();

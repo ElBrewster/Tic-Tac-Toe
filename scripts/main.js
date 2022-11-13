@@ -1,9 +1,8 @@
 
-//per Architecture instructions, main file contains all DOM related Javascript
-//try to use parent nodes or sth like that for event bubbling, especially with our button field
-// var playerObj1 = new Player(them, theirToken);
-// var playerObj2 = new Player(other, otherToken);
-// var gameObj1 = new Game();
+var player1;
+// this is undefined until you define it
+var player2;
+var newGame;
 // --------------------------------------------------------
 var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelector("#buttonField");
@@ -24,19 +23,32 @@ btn7.addEventListener("click", squarePicker(spot));
 // ---> how do I assign the #7 to button 7 always?
 // --------------------------------------------------------
 
-//*** WORKING THROUGH WIN RECORDING AND RECOGNITION ***//
-// var winCons = [123, 147, 159, 258, 357, 369, 456, 789];
-
 function startBtnInit() {
     //buttons 1-9 activate
     //this starts my game
-    var player1 = new Player('Rex', 'smelly');
-    var player2 = new Player('Lex', 'stinky');
-    var newGame = new Game();
+    player1 = new Player('Rex', 'smelly');
+    player2 = new Player('Lex', 'stinky');
+    newGame = new Game(player1, player2);
     // newGame.gameNo++;
     newGame.setPlayerTurn(player1, player2);
     //banner announcement
 
+}
+
+//something that runs squarePicker so that it loops through turn switches until positions filled at 9
+function squarePicker(player.click) {
+    for (var i = 0; i < this.boardPositions.length; i++) {
+        if (click === this.boardPositions[i]) {
+            this.boardPositions.splice(i, 1);
+            player.chosenSpots.push(click); 
+            console.log(player.chosenSpots);
+            //add in a "disabled" state for the button clicked, or do this in the DOM
+        }
+    }
+    if (this.boardPositions.length <= 5) {
+        this.winEval();
+        this.drawEval(); 
+    }
 }
 
 function bannerUpdate () {
