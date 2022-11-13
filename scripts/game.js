@@ -1,16 +1,19 @@
 
 class Game {
-    constructor() {
+    constructor(playerObj1, playerObj2, gameObj1) {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        // this.playerX = playerObj1;
-        // this.playerO = playerObj2;
+        this.playerX = playerObj1;
+        this.playerO = playerObj2;
+        this.newGame = gameObj1;
         this.gameNo = 0;
         this.draw = false;
     } 
 
-    startNewGame(playerObj1, playerObj2) {
-        var gamerThem = new Player(them, theirToken);
-        var gamerOther = new Player(other, otherToken);
+    startNewGame(playerObj1, playerObj2, gameObj1) {
+        var gamerThem = new Player(playerObj1);
+        var gamerOther = new Player(playerObj2);
+        var ticTacGame = new Game();
+
         this.setPlayerTurn();
         this.gameNo++;
     } 
@@ -42,7 +45,7 @@ class Game {
         }
         if (this.boardPositions.length <= 5) {
             this.winEval();
-            this.drawEval();
+            this.drawEval(); 
         }
     }
 

@@ -1,9 +1,9 @@
 
 //per Architecture instructions, main file contains all DOM related Javascript
 //try to use parent nodes or sth like that for event bubbling, especially with our button field
-var gamerThem = new Player(them, theirToken);
-var gamerOther = new Player(other, otherToken);
-var tictacGame = new Game();
+var playerObj1 = new Player(them, theirToken);
+var playerObj2 = new Player(other, otherToken);
+var gameObj1 = new Game();
 // --------------------------------------------------------
 var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelector("#buttonField");
@@ -26,6 +26,10 @@ btn7.addEventListener("click", squarePicker(spot));
 
 //*** WORKING THROUGH WIN RECORDING AND RECOGNITION ***//
 // var winCons = [123, 147, 159, 258, 357, 369, 456, 789];
+
+function startButtonInitiation () {
+    //buttons 1-9 activate
+}
 
 function bannerUpdate () {
     console.log(bannerstuff);
