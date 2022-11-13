@@ -6,6 +6,7 @@ class Player {
         this.tokenPlacement = false;
         this.wins = 0;
         this.chosenSpots = [];
+        // this.start = true;
     }
 
     increaseWins() {

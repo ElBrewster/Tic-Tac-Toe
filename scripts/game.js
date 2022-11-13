@@ -4,19 +4,18 @@ class Game {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.playerX = `${player1.id}: ${player1.icon}` || "heart";
         this.playerO = `${player2.id}: ${player2.icon}` || "star";
-        // this.newGame = gameObj1;
         this.gameNo = 0;
         this.draw = false;
     } 
 
     setPlayerTurn(player1, player2) {
         if(player1.tokenPlacement === false) {
-            player1.squarePicker();
+            player1.squarePicker(player1, spot);
             player1.tokenPlacement = true;
             player2.tokenPlacement = false;
         }
         if(player2.tokenPlacement === false) {
-            player2.squarePicker();
+            player2.squarePicker(player2, spot);
             player2.tokenPlacement = true;
             player1.tokenPlacement = false;
         }
@@ -57,13 +56,18 @@ class Game {
     }
 
     drawEval() {
-        if (this.boardPositions.length = 0) {
+        if (this.boardPositions.length === 0) {
           this.draw = true;
+        }
+        if(this.draw === true) {
+            // ^^change to truthy val
+            this.gameReset();
         }
     }
 
     gameReset() {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        //add the boolean switch here to switch starting player
     }
 }
 

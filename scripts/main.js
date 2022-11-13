@@ -1,6 +1,5 @@
 
 var player1;
-// this is undefined until you define it
 var player2;
 var newGame;
 // --------------------------------------------------------
@@ -18,9 +17,15 @@ var btn3 = document.querySelector("#numPad3");
 var allNumPadBtns = document.querySelectorAll(".numpadBtn");
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
-btn7.addEventListener("click", squarePicker(spot));
-
-// ---> how do I assign the #7 to button 7 always?
+btn7.addEventListener("click", squarePicker(player, 7));
+btn8.addEventListener("click", squarePicker(player, 8));
+btn9.addEventListener("click", squarePicker(player, 9));
+btn4.addEventListener("click", squarePicker(player, 4));
+btn5.addEventListener("click", squarePicker(player, 5));
+btn6.addEventListener("click", squarePicker(player, 6));
+btn1.addEventListener("click", squarePicker(player, 1));
+btn2.addEventListener("click", squarePicker(player, 2));
+btn3.addEventListener("click", squarePicker(player, 3));
 // --------------------------------------------------------
 
 function startBtnInit() {
@@ -36,18 +41,20 @@ function startBtnInit() {
 }
 
 //something that runs squarePicker so that it loops through turn switches until positions filled at 9
-function squarePicker(player.click) {
-    for (var i = 0; i < this.boardPositions.length; i++) {
-        if (click === this.boardPositions[i]) {
-            this.boardPositions.splice(i, 1);
-            player.chosenSpots.push(click); 
-            console.log(player.chosenSpots);
-            //add in a "disabled" state for the button clicked, or do this in the DOM
+function squarePicker(player1clicka, spot) {
+        var spot = btnchoice; 
+        var player1clicka = theplayeratm;
+        for (var i = 0; i < newGame.boardPositions.length; i++) {
+            if (spot === newGame.boardPositions[i]) {
+                newGame.boardPositions.splice(i, 1);
+                player1clicka.chosenSpots.push(spot); 
+                console.log(player1clicka.chosenSpots);
+                //add in a "disabled" state for the button clicked perhaps
         }
-    }
-    if (this.boardPositions.length <= 5) {
-        this.winEval();
-        this.drawEval(); 
+        if (newGame.boardPositions.length <= 5) {
+            newGame.winEval();
+            newGame.drawEval(); 
+        }
     }
 }
 
