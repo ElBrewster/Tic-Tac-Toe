@@ -38,37 +38,37 @@ class Game {
         this.setPlayerTurn();
     }
     
-    winEval(player1, player2) {
+    winEval(player1) {
         player1.chosenSpots.sort();
         console.log(player1.chosenSpots);
-        player2.chosenSpots.sort();
-        console.log(player2.chosenSpots);
+        // player2.chosenSpots.sort();
+        // console.log(player2.chosenSpots);
         var chosenSpots1 = player1.chosenSpots.join("");
-        var chosenSpots2 = player2.chosenSpots.join("");
-        var chosenSpots1Str = chosenSpots1.toString();
-        var chosenSpots2Str = chosenSpots2.toString();
-        console.log(chosenSpots1Str, chosenSpots2Str);
+        // var chosenSpots2 = player2.chosenSpots.join("");
+        var spotsStr = chosenSpots1.toString();
+        // var chosenSpots2Str = chosenSpots2.toString();
+        console.log(spotsStr);
         // var winner = [4, 5, 9, 1]; 
         // // -->probably refer to our player instances to refer to their array
         // winner.sort();
         // var dinner = winner.join("");
         // var dinnerStr = dinner.toString();
-        if(dinnerStr.includes("1") && dinnerStr.includes("2") && dinnerStr.includes("3")) {
-            console.log(dinnerStr);
-        } else if(dinnerStr.includes("1") && dinnerStr.includes("4") && dinnerStr.includes("7")) {
-            console.log(dinnerStr); 
-        } else if(dinnerStr.includes("1") && dinnerStr.includes("5") && dinnerStr.includes("9")) {
-            console.log(dinnerStr); 
-        } else if(dinnerStr.includes("2") && dinnerStr.includes("5") && dinnerStr.includes("8")) {
-            console.log(dinnerStr); 
-        } else if(dinnerStr.includes("3") && dinnerStr.includes("5") && dinnerStr.includes("7")) {
-            console.log(dinnerStr); 
-        } else if(dinnerStr.includes("3") && dinnerStr.includes("6") && dinnerStr.includes("9")) {
-            console.log(dinnerStr); 
-        } else if(dinnerStr.includes("4") && dinnerStr.includes("5") && dinnerStr.includes("6")) {
-            console.log(dinnerStr); 
-        } else if(dinnerStr.includes("7") && dinnerStr.includes("8") && dinnerStr.includes("9")) {
-            console.log(dinnerStr); 
+        if(spotsStr.includes("1") && spotsStr.includes("2") && spotsStr.includes("3")) {
+            console.log(spotsStr);
+        } else if(spotsStr.includes("1") && spotsStr.includes("4") && spotsStr.includes("7")) {
+            console.log(spotsStr); 
+        } else if(spotsStr.includes("1") && spotsStr.includes("5") && spotsStr.includes("9")) {
+            console.log(spotsStr); 
+        } else if(spotsStr.includes("2") && spotsStr.includes("5") && spotsStr.includes("8")) {
+            console.log(spotsStr); 
+        } else if(spotsStr.includes("3") && spotsStr.includes("5") && spotsStr.includes("7")) {
+            console.log(spotsStr, "YOU WIN!"); 
+        } else if(spotsStr.includes("3") && spotsStr.includes("6") && spotsStr.includes("9")) {
+            console.log(spotsStr); 
+        } else if(spotsStr.includes("4") && spotsStr.includes("5") && spotsStr.includes("6")) {
+            console.log(spotsStr); 
+        } else if(spotsStr.includes("7") && spotsStr.includes("8") && spotsStr.includes("9")) {
+            console.log(spotsStr); 
         } else {
             this.drawEval();
         }
