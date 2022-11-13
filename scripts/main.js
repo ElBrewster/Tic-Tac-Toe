@@ -25,4 +25,12 @@ btn7.addEventListener("click", squarePicker(spot));
 // --------------------------------------------------------
 
 //*** WORKING THROUGH WIN RECORDING AND RECOGNITION ***//
-var winCons = [123, 147, 159, 258, 357, 369, 456, 789];
+// var winCons = [123, 147, 159, 258, 357, 369, 456, 789];
+
+function bannerUpdate () {
+    console.log(bannerstuff);
+}
+
+function otherGameResetFunction() {
+    console.log(timeout);
+}
