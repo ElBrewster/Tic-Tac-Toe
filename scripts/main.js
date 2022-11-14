@@ -7,8 +7,10 @@ var newGame;
 var spotNumber;
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
+var firstPlayerScore = document.querySelector("#firstPlayerScore");
+var secondPlayerScore = document.querySelector("#secondPlayerScore");
 var startBtn = document.querySelector("#startButton");
-var btnField = document.querySelector("#buttonField");
+var btnField = document.querySelectorAll(".numpadBtn");
 var btn7 = document.querySelector("#numPad7");
 var btn8 = document.querySelector("#numPad8");
 var btn9 = document.querySelector("#numPad9");
@@ -18,9 +20,10 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
-// var allNumPadBtns = document.querySelectorAll(".numpadBtn");
+// --------------------------------------------------------
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
+// btnField.addEventListener("click", whatever);
 btn7.addEventListener("click", whatever);
 btn8.addEventListener("click", whatever);
 btn9.addEventListener("click", whatever);
@@ -35,8 +38,8 @@ btn3.addEventListener("click", whatever);
 function startBtnInit() {
     //buttons 1-9 activate
     //this starts my game
-    player1 = new Player('Rex', 'smelly');
-    player2 = new Player('Lex', 'stinky');
+    player1 = new Player('Rex', "&#128566");
+    player2 = new Player('Lex', "&#128565");
     newGame = new Game(player1, player2);
     // newGame.gameNo++;
     // newGame.setPlayerTurn(player1, player2);
@@ -67,6 +70,17 @@ function bannerUpdate () {
     console.log(bannerstuff);
 }
 
+function updateScoreSheet() {
+    firstPlayerScore.innerText = `First Player: ${player1.wins}`;
+    secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
+}
+
 function otherGameResetFunction() {
     console.log(timeout);
 }
+
+//HTML emoji stuf: lightning 9889 star11088 diamond 128142 explosion128165
+//explosion speech bubble 128495 siren 128680
+//point left arrow
+//128566 face without mouth
+//128565	 face with x eyes
