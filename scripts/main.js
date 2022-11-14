@@ -7,6 +7,8 @@ var newGame;
 var spotNumber;
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
+var firstPlayerScore = document.querySelector("#firstPlayerScore");
+var secondPlayerScore = document.querySelector("#secondPlayerScore");
 var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelectorAll(".numpadBtn");
 var btn7 = document.querySelector("#numPad7");
@@ -65,6 +67,11 @@ function bannerUpdate () {
     //"I bet you wish you were playing chess!"
     //"Take a sharpie and draw a 'cat's tail' on this thing!"
     console.log(bannerstuff);
+}
+
+function updateScoreSheet() {
+    firstPlayerScore.innerText = `First Player: ${player1.wins}`;
+    secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
 }
 
 function otherGameResetFunction() {
