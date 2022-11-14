@@ -5,6 +5,7 @@ class Game {
         this.playerX = `${player1.id}: ${player1.icon}` || "heart";
         this.playerO = `${player2.id}: ${player2.icon}` || "star";
         this.gameNo = 0;
+        this.winner = false;
         this.draw = false;
         this.firstTurn = player1;
         //^^ reassign to 2 at reset
@@ -35,6 +36,8 @@ class Game {
     }
 
     switchPlayerTurn() {
+        topBanner.innerText = `${player1} picks and clicks a spot now.`
+
         this.setPlayerTurn();
     }
     
@@ -55,19 +58,35 @@ class Game {
         // var dinnerStr = dinner.toString();
         if(spotsStr.includes("1") && spotsStr.includes("2") && spotsStr.includes("3")) {
             console.log(spotsStr);
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
         } else if(spotsStr.includes("1") && spotsStr.includes("4") && spotsStr.includes("7")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("1") && spotsStr.includes("5") && spotsStr.includes("9")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("2") && spotsStr.includes("5") && spotsStr.includes("8")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("3") && spotsStr.includes("5") && spotsStr.includes("7")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr, "YOU WIN!"); 
         } else if(spotsStr.includes("3") && spotsStr.includes("6") && spotsStr.includes("9")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("4") && spotsStr.includes("5") && spotsStr.includes("6")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("7") && spotsStr.includes("8") && spotsStr.includes("9")) {
+            this.winner = true;
+            topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else {
             this.drawEval();
@@ -77,11 +96,12 @@ class Game {
     }
     
     drawEval() {
-        if (this.boardPositions.length === 0) {
+        if (this.boardPositions.length === 0 && this.winner === false) {
             this.draw = true;
         }
         if(this.draw === true) {
             // ^^change to truthy val
+            topBanner.innerText = "Game Over: Nobody Won!"
             this.gameReset();
         }
     }
