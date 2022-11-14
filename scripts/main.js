@@ -8,7 +8,7 @@ var spotNumber;
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
 var startBtn = document.querySelector("#startButton");
-var btnField = document.querySelector("#buttonField");
+var btnField = document.querySelectorAll(".numpadBtn");
 var btn7 = document.querySelector("#numPad7");
 var btn8 = document.querySelector("#numPad8");
 var btn9 = document.querySelector("#numPad9");
@@ -18,7 +18,7 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
-// var allNumPadBtns = document.querySelectorAll(".numpadBtn");
+// --------------------------------------------------------
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
 btn7.addEventListener("click", whatever);
@@ -70,3 +70,4 @@ function bannerUpdate () {
 function otherGameResetFunction() {
     console.log(timeout);
 }
+

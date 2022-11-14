@@ -8,7 +8,7 @@
 
 @font-face {
     color:rgb(66, 7, 69);
-    font-family: sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     src: url();
     font-weight: normal;
 }
@@ -44,6 +44,7 @@ main {
     width: 40%;
     display: flex;
     flex-direction: column;
+    background-color: skyblue;
 }
 
 form {
@@ -68,6 +69,40 @@ aside {
     height: 50%;
     width: 100%;
     background-color: azure;
+    text-indent: 3em;
+}
+
+hr {
+    color:aqua;
+}
+
+h3 {
+    font-family: 'Kalam', cursive;
+    font-size: 1em;
+    margin: 0;
+}
+.vl {
+    border-left: 1px solid red;
+    height: 20%;
+    /* position: absolute; */
+    left: 50%;
+    margin-left: 2em;
+    top: 0;
+}
+
+.blank {
+    color: azure;
+}
+
+.dot {
+    height: 1.2em;
+    width:  1.2em;
+    background-color: #666;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 /* ---------------------------------------------------------------------- */
 /* button stuff goes here */
