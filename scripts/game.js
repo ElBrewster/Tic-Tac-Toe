@@ -2,8 +2,8 @@
 class Game {
     constructor(player1, player2) {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        this.playerX = `${player1.id}: ${player1.icon}` || "heart";
-        this.playerO = `${player2.id}: ${player2.icon}` || "star";
+        this.playerX = `${player1.id}: ${player1.token}` || "heart";
+        this.playerO = `${player2.id}: ${player2.token}` || "star";
         this.gameNo = 0;
         this.winner = false;
         this.draw = false;
@@ -11,83 +11,51 @@ class Game {
         //^^ reassign to 2 at reset
     } 
 
-    setPlayerTurn(player1, player2) {
-        var spotNumber;
-        if(player1.tokenPlacement === false) {
-            player1.squarePicker(spotNumber);
-            player1.tokenPlacement = true;
-            player2.tokenPlacement = false;
-            //banner function to say who's turn it is
-        }
-        if(player2.tokenPlacement === false) {
-            player2.squarePicker(spotNumber);
-            player2.tokenPlacement = true;
-            player1.tokenPlacement = false;
-            //banner function to say who's turn it is
-        }
-        console.log(player1, player2);
-    }
-    
     gameEndCheck() {
         if (newGame.boardPositions.length <= 5) {
             newGame.winEval();
             newGame.drawEval(); 
         }
     }
-
-    switchPlayerTurn() {
-        topBanner.innerText = `${player1} picks and clicks a spot now.`
-
-        this.setPlayerTurn();
-    }
     
     winEval(player1) {
         player1.chosenSpots.sort();
         console.log(player1.chosenSpots);
-        // player2.chosenSpots.sort();
-        // console.log(player2.chosenSpots);
         var chosenSpots1 = player1.chosenSpots.join("");
-        // var chosenSpots2 = player2.chosenSpots.join("");
         var spotsStr = chosenSpots1.toString();
-        // var chosenSpots2Str = chosenSpots2.toString();
         console.log(spotsStr);
-        // var winner = [4, 5, 9, 1]; 
-        // // -->probably refer to our player instances to refer to their array
-        // winner.sort();
-        // var dinner = winner.join("");
-        // var dinnerStr = dinner.toString();
         if(spotsStr.includes("1") && spotsStr.includes("2") && spotsStr.includes("3")) {
             console.log(spotsStr);
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
         } else if(spotsStr.includes("1") && spotsStr.includes("4") && spotsStr.includes("7")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("1") && spotsStr.includes("5") && spotsStr.includes("9")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("2") && spotsStr.includes("5") && spotsStr.includes("8")) {
             this.winner = true;
             player1.wins++;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("3") && spotsStr.includes("5") && spotsStr.includes("7")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr, "YOU WIN!"); 
         } else if(spotsStr.includes("3") && spotsStr.includes("6") && spotsStr.includes("9")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("4") && spotsStr.includes("5") && spotsStr.includes("6")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("7") && spotsStr.includes("8") && spotsStr.includes("9")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else {
             this.drawEval();

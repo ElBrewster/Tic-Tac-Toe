@@ -1,5 +1,5 @@
-// var player1 = new Player('Rex', 'smelly');
-// var player2 = new Player('Lex', 'stinky');
+// var player1 = new Player("Rex", "X");
+// var player2 = new Player("Lex", "O");
 // var newGame = new Game(player1, player2);
 var player1;
 var player2;
@@ -10,7 +10,8 @@ var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
 var secondPlayerScore = document.querySelector("#secondPlayerScore");
 var startBtn = document.querySelector("#startButton");
-var btnField = document.querySelectorAll(".numpadBtn");
+var btnField = document.querySelector("#buttonField");
+// --------------------------------------------------------
 var btn7 = document.querySelector("#numPad7");
 var btn8 = document.querySelector("#numPad8");
 var btn9 = document.querySelector("#numPad9");
@@ -21,42 +22,89 @@ var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
 // --------------------------------------------------------
-// --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
-// btnField.addEventListener("click", whatever);
-btn7.addEventListener("click", function cosmeticClick() {
-    btn7.textContent = player.i
-});
-btn8.addEventListener("click", whatever);
-btn9.addEventListener("click", whatever);
-btn4.addEventListener("click", whatever);
-btn5.addEventListener("click", whatever);
-btn6.addEventListener("click", whatever);
-btn1.addEventListener("click", whatever);
-btn2.addEventListener("click", whatever);
-btn3.addEventListener("click", whatever);
+btnField.addEventListener("click", runSomething);
+
+function runSomething() {
+    var nineBtns = document.getElementsByClassName("numpadBtn");
+    for (var i = 0; i < nineBtns.length; i++) {
+        nineBtns[i].addEventListener("click", cosmeticClick);
+        console.log(nineBtns);
+    }
+}
+
+// btnField.addEventListener("click", cosmeticClick);
+// btn7.addEventListener("click", cosmeticClick);
+// btn8.addEventListener("click", cosmeticClick);
+// btn9.addEventListener("click", cosmeticClick);
+// btn4.addEventListener("click", cosmeticClick);
+// btn5.addEventListener("click", cosmeticClick);
+// btn6.addEventListener("click", cosmeticClick);
+// btn1.addEventListener("click", cosmeticClick);
+// btn2.addEventListener("click", cosmeticClick);
+// btn3.addEventListener("click", cosmeticClick);
+
+function cosmeticClick(player1) {
+    alert("hi El");
+    btn7.textContent = player1.token;
+    // btn7.style.property = new style;
+}
 // --------------------------------------------------------
 
 function startBtnInit() {
-    //buttons 1-9 activate
     //this starts my game
-    player1 = new Player('Rex', "&#128566");
-    player2 = new Player('Lex', "&#128565");
-    newGame = new Game(player1, player2);
+    //buttons 1-9 activate
+    var player1 = new Player("Rex", "X");
+    // "&#128566"
+    var player2 = new Player("Lex", "O");
+    var newGame = new Game(player1, player2);
+    // "&#128565"
     // newGame.gameNo++;
-    // newGame.setPlayerTurn(player1, player2);
     //banner announcement
     topBanner.innerText = "Let's goooooo!";
+    //we need a pause here somehow before player turn is announced
+    topBanner.innerText = `${player1.id} picks and clicks a spot now.`
 
     console.log(player1, player2, newGame);
 
 }
 
-function whatever() {
-    //how do I attach specific variable to these eventListeners? or what even am I doing here?
-    console.log(newGame);
-} 
-//something that runs squarePicker so that it loops through turn switches until positions filled at 9
+// function turnStart(player1, player2) {
+//     topBanner.innerText = `${player1} picks and clicks a spot now.`;
+//     newGame.setPlayerTurn(player1, player2);
+// }
+
+function setPlayerTurn(player1, player2) {
+    var spotNumber;
+    if(player1.tokenPlacement === false) {
+        topBanner.innerText = `${player1.id} picks and clicks a spot now.`
+        player1.squarePicker(spotNumber);
+        player1.tokenPlacement = true;
+        player2.tokenPlacement = false;
+        //banner function to say who's turn it is
+    }
+    if(player2.tokenPlacement === false) {
+        topBanner.innerText = `${player1.id} picks and clicks a spot now.`
+        player2.squarePicker(spotNumber);
+        player2.tokenPlacement = true;
+        player1.tokenPlacement = false;
+        //banner function to say who's turn it is
+    }
+    console.log(player1, player2);
+}
+
+function updateScoreSheet(player1, player2) {
+    if (player1.won === true) {
+        firstPlayerScore.innerText = `First Player: ${player1.wins}`;
+    }
+    if (player2.won === true) {
+        secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
+    }
+}
+
+function otherGameResetFunction() {
+    console.log(timeout);
+}
 
 function bannerUpdate () {
     //this is more for record-keeping
@@ -71,18 +119,13 @@ function bannerUpdate () {
     //"Take a sharpie and draw a 'cat's tail' on this thing!"
     console.log(bannerstuff);
 }
-
-function updateScoreSheet(player1, player2) {
-    firstPlayerScore.innerText = `First Player: ${player1.wins}`;
-    secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
-}
-
-function otherGameResetFunction() {
-    console.log(timeout);
-}
-
 //HTML emoji stuf: lightning 9889 star11088 diamond 128142 explosion128165
 //explosion speech bubble 128495 siren 128680
 //point left arrow
 //128566 face without mouth
 //128565	 face with x eyes
+function whatever() {
+    // alert("hi El");
+    //how do I attach specific variable to these eventListeners? or what even am I doing here?
+    console.log(newGame);
+} 

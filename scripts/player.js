@@ -1,11 +1,12 @@
 
 class Player {
-    constructor(nickname, icon) {
-        this.id = nickname;
-        this.token = icon;
+    constructor(id, token) {
+        this.id = id;
+        this.token = token;
         //"&#128566" or "&#128565"
         this.tokenPlacement = false;
         this.wins = 0;
+        this.won = false;
         this.chosenSpots = [];
         // this.start = true;
     } 
