@@ -3,6 +3,7 @@ class Player {
     constructor(nickname, icon) {
         this.id = nickname;
         this.token = icon;
+        //"&#128566" or "&#128565"
         this.tokenPlacement = false;
         this.wins = 0;
         this.chosenSpots = [];

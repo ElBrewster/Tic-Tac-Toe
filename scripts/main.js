@@ -35,8 +35,8 @@ btn3.addEventListener("click", whatever);
 function startBtnInit() {
     //buttons 1-9 activate
     //this starts my game
-    player1 = new Player('Rex', 'smelly');
-    player2 = new Player('Lex', 'stinky');
+    player1 = new Player('Rex', "&#128566");
+    player2 = new Player('Lex', "&#128565");
     newGame = new Game(player1, player2);
     // newGame.gameNo++;
     // newGame.setPlayerTurn(player1, player2);
@@ -71,3 +71,8 @@ function otherGameResetFunction() {
     console.log(timeout);
 }
 
+//HTML emoji stuf: lightning 9889 star11088 diamond 128142 explosion128165
+//explosion speech bubble 128495 siren 128680
+//point left arrow
+//128566 face without mouth
+//128565	 face with x eyes
