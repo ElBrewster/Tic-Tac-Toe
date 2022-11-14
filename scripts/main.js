@@ -24,7 +24,9 @@ var btn3 = document.querySelector("#numPad3");
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
 // btnField.addEventListener("click", whatever);
-btn7.addEventListener("click", whatever);
+btn7.addEventListener("click", function cosmeticClick() {
+    btn7.textContent = player.i
+});
 btn8.addEventListener("click", whatever);
 btn9.addEventListener("click", whatever);
 btn4.addEventListener("click", whatever);
@@ -70,7 +72,7 @@ function bannerUpdate () {
     console.log(bannerstuff);
 }
 
-function updateScoreSheet() {
+function updateScoreSheet(player1, player2) {
     firstPlayerScore.innerText = `First Player: ${player1.wins}`;
     secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
 }

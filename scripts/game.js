@@ -70,6 +70,7 @@ class Game {
             console.log(spotsStr); 
         } else if(spotsStr.includes("2") && spotsStr.includes("5") && spotsStr.includes("8")) {
             this.winner = true;
+            player1.wins++;
             topBanner.innerText = `Hey yea! ${player1} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("3") && spotsStr.includes("5") && spotsStr.includes("7")) {
