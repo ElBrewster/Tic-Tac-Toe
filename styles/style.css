@@ -166,8 +166,7 @@ button:focus {
         "button4 button5 button6"
         "button1 button2 button3";
     gap: 2em;
-    background-color: rgb(162, 207, 239);
-    
+    background-color: rgb(162, 207, 239);    
 
 }
     /* ^that's technically a section^ */
@@ -178,52 +177,16 @@ button:focus {
     text-align: center;
     transition-duration: 0.4s;
 } */
-/* .numpad-7,
-.numpad-8,
-.numpad-9,
-.numpad-4,
-.numpad-5,
-.numpad-6,
-.numpad-1,
-.numpad-2,
-.numpad-3 */
+
 
 .numpadBtn:hover {
     background-color: rgb(250, 178, 178);
     color: white;
 } 
-/* .numpad-8:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
-.numpad-9:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
- .numpad-4:hover { 
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
-.numpad-5:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
-.numpad-6:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
-.numpad-1:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
-.numpad-2:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-} 
-.numpad-3:hover {
-    background-color: rgb(250, 178, 178);
-    color: white;
-}  */
+.numpadBtn {
+    font-size: xx-large;
+    color:rgb(12, 124, 31)
+}
 
 .start-button {
     width: 10em;
