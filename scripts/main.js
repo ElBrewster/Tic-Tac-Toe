@@ -2,6 +2,12 @@ var player1;
 var player2;
 var newGame;
 var spotNumber;
+// var player1 = new Player("Rex", "X");
+// var player2 = new Player("Lex", "O");
+// var newGame = new Game(player1, player2);
+var player1 = new Player("me", "☝");
+var player2 = new Player("you", "😍");
+var newGame = new Game(player1, player2);
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
@@ -18,44 +24,43 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
+var allNumPad = document.querySelectorAll(".numpadBtns");
+// --> use this for resest: allNumPad[i].innerText = default
+// --> maybe od a document.createElement for scores in our aside!
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
-btnField.addEventListener("click", runSomething);
-
-function runSomething() {
-    var nineBtns = document.getElementsByClassName("numpadBtn");
-    for (var i = 0; i < nineBtns.length; i++) {
-        nineBtns[i].addEventListener("click", cosmeticClick);
-        console.log(nineBtns);
-    }
-}
 
 // btnField.addEventListener("click", cosmeticClick);
-// btn7.addEventListener("click", cosmeticClick);
-// btn8.addEventListener("click", cosmeticClick);
-// btn9.addEventListener("click", cosmeticClick);
-// btn4.addEventListener("click", cosmeticClick);
-// btn5.addEventListener("click", cosmeticClick);
-// btn6.addEventListener("click", cosmeticClick);
-// btn1.addEventListener("click", cosmeticClick);
-// btn2.addEventListener("click", cosmeticClick);
-// btn3.addEventListener("click", cosmeticClick);
+btn7.addEventListener("click", cosmeticClick);
+btn8.addEventListener("click", cosmeticClick);
+btn9.addEventListener("click", cosmeticClick);
+btn4.addEventListener("click", cosmeticClick);
+btn5.addEventListener("click", cosmeticClick);
+btn6.addEventListener("click", cosmeticClick);
+btn1.addEventListener("click", cosmeticClick);
+btn2.addEventListener("click", cosmeticClick);
+btn3.addEventListener("click", cosmeticClick);
 
-function cosmeticClick(player1) {
-    alert("hi El");
-    btn7.textContent = player1.token;
+function cosmeticClick() {
+        alert("hi El");
+        btn7.textContent = "☝";
     // btn7.style.property = new style;
+}
+
+// function cosmeticClick(player1, player2) {
+//     alert("hi El");
+//     btn7.textContent = player1.token;
+// btn7.style.property = new style;
 }
 // --------------------------------------------------------
 
 function startBtnInit() {
     //buttons 1-9 activate
-    var player1 = new Player("Rex", "X");
-    var player2 = new Player("Lex", "O");
-    var newGame = new Game(player1, player2);
+    // var player1 = new Player("Rex", "X");
+    // var player2 = new Player("Lex", "O");
+    // var newGame = new Game(player1, player2);
     topBanner.innerText = "Let's goooooo!";
     topBanner.innerText = `${player1.id} picks and clicks a spot now.`
-
     console.log(player1, player2, newGame);
 
 }
