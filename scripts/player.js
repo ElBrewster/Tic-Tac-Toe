@@ -6,6 +6,7 @@ class Player {
         //"&#128566" or "&#128565"
         this.tokenPlacement = false;
         this.wins = 0;
+        this.won = false;
         this.chosenSpots = [];
         // this.start = true;
     } 

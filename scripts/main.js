@@ -25,7 +25,7 @@ var btn3 = document.querySelector("#numPad3");
 startBtn.addEventListener("click", startBtnInit);
 // btnField.addEventListener("click", whatever);
 btn7.addEventListener("click", function cosmeticClick() {
-    btn7.textContent = player.i
+    btn7.textContent = player.icon;
 });
 btn8.addEventListener("click", whatever);
 btn9.addEventListener("click", whatever);
@@ -72,9 +72,32 @@ function bannerUpdate () {
     console.log(bannerstuff);
 }
 
+function setPlayerTurn(player1, player2) {
+    var spotNumber;
+    if(player1.tokenPlacement === false) {
+        topBanner.innerText = `${player1} picks and clicks a spot now.`
+        player1.squarePicker(spotNumber);
+        player1.tokenPlacement = true;
+        player2.tokenPlacement = false;
+        //banner function to say who's turn it is
+    }
+    if(player2.tokenPlacement === false) {
+        topBanner.innerText = `${player1} picks and clicks a spot now.`
+        player2.squarePicker(spotNumber);
+        player2.tokenPlacement = true;
+        player1.tokenPlacement = false;
+        //banner function to say who's turn it is
+    }
+    console.log(player1, player2);
+}
+
 function updateScoreSheet(player1, player2) {
-    firstPlayerScore.innerText = `First Player: ${player1.wins}`;
-    secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
+    if (player1.won === true) {
+        firstPlayerScore.innerText = `First Player: ${player1.wins}`;
+    }
+    if (player2.won === true) {
+        secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
+    }
 }
 
 function otherGameResetFunction() {

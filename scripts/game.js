@@ -11,51 +11,19 @@ class Game {
         //^^ reassign to 2 at reset
     } 
 
-    setPlayerTurn(player1, player2) {
-        var spotNumber;
-        if(player1.tokenPlacement === false) {
-            player1.squarePicker(spotNumber);
-            player1.tokenPlacement = true;
-            player2.tokenPlacement = false;
-            //banner function to say who's turn it is
-        }
-        if(player2.tokenPlacement === false) {
-            player2.squarePicker(spotNumber);
-            player2.tokenPlacement = true;
-            player1.tokenPlacement = false;
-            //banner function to say who's turn it is
-        }
-        console.log(player1, player2);
-    }
-    
     gameEndCheck() {
         if (newGame.boardPositions.length <= 5) {
             newGame.winEval();
             newGame.drawEval(); 
         }
     }
-
-    switchPlayerTurn() {
-        topBanner.innerText = `${player1} picks and clicks a spot now.`
-
-        this.setPlayerTurn();
-    }
     
     winEval(player1) {
         player1.chosenSpots.sort();
         console.log(player1.chosenSpots);
-        // player2.chosenSpots.sort();
-        // console.log(player2.chosenSpots);
         var chosenSpots1 = player1.chosenSpots.join("");
-        // var chosenSpots2 = player2.chosenSpots.join("");
         var spotsStr = chosenSpots1.toString();
-        // var chosenSpots2Str = chosenSpots2.toString();
         console.log(spotsStr);
-        // var winner = [4, 5, 9, 1]; 
-        // // -->probably refer to our player instances to refer to their array
-        // winner.sort();
-        // var dinner = winner.join("");
-        // var dinnerStr = dinner.toString();
         if(spotsStr.includes("1") && spotsStr.includes("2") && spotsStr.includes("3")) {
             console.log(spotsStr);
             this.winner = true;
