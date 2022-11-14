@@ -1,6 +1,3 @@
-// var player1 = new Player("Rex", "X");
-// var player2 = new Player("Lex", "O");
-// var newGame = new Game(player1, player2);
 var player1;
 var player2;
 var newGame;
@@ -52,27 +49,16 @@ function cosmeticClick(player1) {
 // --------------------------------------------------------
 
 function startBtnInit() {
-    //this starts my game
     //buttons 1-9 activate
     var player1 = new Player("Rex", "X");
-    // "&#128566"
     var player2 = new Player("Lex", "O");
     var newGame = new Game(player1, player2);
-    // "&#128565"
-    // newGame.gameNo++;
-    //banner announcement
     topBanner.innerText = "Let's goooooo!";
-    //we need a pause here somehow before player turn is announced
     topBanner.innerText = `${player1.id} picks and clicks a spot now.`
 
     console.log(player1, player2, newGame);
 
 }
-
-// function turnStart(player1, player2) {
-//     topBanner.innerText = `${player1} picks and clicks a spot now.`;
-//     newGame.setPlayerTurn(player1, player2);
-// }
 
 function setPlayerTurn(player1, player2) {
     var spotNumber;
@@ -88,7 +74,6 @@ function setPlayerTurn(player1, player2) {
         player2.squarePicker(spotNumber);
         player2.tokenPlacement = true;
         player1.tokenPlacement = false;
-        //banner function to say who's turn it is
     }
     console.log(player1, player2);
 }
@@ -101,31 +86,3 @@ function updateScoreSheet(player1, player2) {
         secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
     }
 }
-
-function otherGameResetFunction() {
-    console.log(timeout);
-}
-
-function bannerUpdate () {
-    //this is more for record-keeping
-    topBanner.innerText = "Let's goooooo!"
-    topBanner.innerText = `${player1} picks and clicks a spot now.`
-    topBanner.innerText = "Game Over: Nobody Won!"
-    topBanner.innerText = `Hey yea! ${player1} wins this one!`
-    //on second draw: "Maybe bribe your friend with sweets to let you win!" and so on
-    //"What if you took turns planning to win?"
-    //"Tic tac toe has garbage gameplay design, learn social engineering to get the results you want"
-    //"I bet you wish you were playing chess!"
-    //"Take a sharpie and draw a 'cat's tail' on this thing!"
-    console.log(bannerstuff);
-}
-//HTML emoji stuf: lightning 9889 star11088 diamond 128142 explosion128165
-//explosion speech bubble 128495 siren 128680
-//point left arrow
-//128566 face without mouth
-//128565	 face with x eyes
-function whatever() {
-    // alert("hi El");
-    //how do I attach specific variable to these eventListeners? or what even am I doing here?
-    console.log(newGame);
-} 

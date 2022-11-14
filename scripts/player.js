@@ -3,12 +3,11 @@ class Player {
     constructor(id, token) {
         this.id = id;
         this.token = token;
-        //"&#128566" or "&#128565"
         this.tokenPlacement = false;
         this.wins = 0;
         this.won = false;
         this.chosenSpots = [];
-        // this.start = true;
+        this.start = true;
     } 
 
     squarePicker(spotNumber) {
@@ -17,7 +16,6 @@ class Player {
                 newGame.boardPositions.splice(i, 1);
                 this.chosenSpots.push(spotNumber); 
                 console.log(this.chosenSpots);
-                //add in a "disabled" state for the button clicked perhaps
             }
         }
     }
@@ -26,9 +24,3 @@ class Player {
         this.wins++;
     }
 }
-
-//per Architecture instructions, Player file must include methods:
-//constructor with id, token, and wins
-//increaseWins() to count player's wins
-
-//tokens: hot or cold? to be warm or cool button tones?
