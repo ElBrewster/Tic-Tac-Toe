@@ -27,35 +27,35 @@ class Game {
         if(spotsStr.includes("1") && spotsStr.includes("2") && spotsStr.includes("3")) {
             console.log(spotsStr);
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
         } else if(spotsStr.includes("1") && spotsStr.includes("4") && spotsStr.includes("7")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("1") && spotsStr.includes("5") && spotsStr.includes("9")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("2") && spotsStr.includes("5") && spotsStr.includes("8")) {
             this.winner = true;
             player1.wins++;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("3") && spotsStr.includes("5") && spotsStr.includes("7")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr, "YOU WIN!"); 
         } else if(spotsStr.includes("3") && spotsStr.includes("6") && spotsStr.includes("9")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("4") && spotsStr.includes("5") && spotsStr.includes("6")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else if(spotsStr.includes("7") && spotsStr.includes("8") && spotsStr.includes("9")) {
             this.winner = true;
-            topBanner.innerText = `Hey yea! ${player1} wins this one!`
+            topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
             console.log(spotsStr); 
         } else {
             this.drawEval();
