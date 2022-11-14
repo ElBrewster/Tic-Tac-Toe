@@ -23,6 +23,7 @@ var btn3 = document.querySelector("#numPad3");
 // --------------------------------------------------------
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
+// btnField.addEventListener("click", whatever);
 btn7.addEventListener("click", whatever);
 btn8.addEventListener("click", whatever);
 btn9.addEventListener("click", whatever);
