@@ -2,8 +2,8 @@
 class Game {
     constructor(player1, player2) {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        this.playerX = `${player1.id}: ${player1.icon}` || "heart";
-        this.playerO = `${player2.id}: ${player2.icon}` || "star";
+        this.playerX = `${player1.id}: ${player1.token}` || "heart";
+        this.playerO = `${player2.id}: ${player2.token}` || "star";
         this.gameNo = 0;
         this.winner = false;
         this.draw = false;

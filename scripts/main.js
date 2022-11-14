@@ -29,29 +29,29 @@ function cosmeticClick(player1) {
     alert("hi El");
     btn7.textContent = player1.token;
 }
-btn8.addEventListener("click", whatever);
-btn9.addEventListener("click", whatever);
-btn4.addEventListener("click", whatever);
-btn5.addEventListener("click", whatever);
-btn6.addEventListener("click", whatever);
-btn1.addEventListener("click", whatever);
-btn2.addEventListener("click", whatever);
-btn3.addEventListener("click", whatever);
+btn8.addEventListener("click", cosmeticClick);
+btn9.addEventListener("click", cosmeticClick);
+btn4.addEventListener("click", cosmeticClick);
+btn5.addEventListener("click", cosmeticClick);
+btn6.addEventListener("click", cosmeticClick);
+btn1.addEventListener("click", cosmeticClick);
+btn2.addEventListener("click", cosmeticClick);
+btn3.addEventListener("click", cosmeticClick);
 // --------------------------------------------------------
 
 function startBtnInit() {
     //this starts my game
     //buttons 1-9 activate
-    player1 = new Player("Rex", "X");
+    var player1 = new Player("Rex", "X");
     // "&#128566"
-    player2 = new Player("Lex", "O");
+    var player2 = new Player("Lex", "O");
+    var newGame = new Game(player1, player2);
     // "&#128565"
-    newGame = new Game(player1, player2);
     // newGame.gameNo++;
     //banner announcement
     topBanner.innerText = "Let's goooooo!";
     //we need a pause here somehow before player turn is announced
-    topBanner.innerText = `${player1} picks and clicks a spot now.`
+    topBanner.innerText = `${player1.id} picks and clicks a spot now.`
 
     console.log(player1, player2, newGame);
 
@@ -65,14 +65,14 @@ function startBtnInit() {
 function setPlayerTurn(player1, player2) {
     var spotNumber;
     if(player1.tokenPlacement === false) {
-        topBanner.innerText = `${player1} picks and clicks a spot now.`
+        topBanner.innerText = `${player1.id} picks and clicks a spot now.`
         player1.squarePicker(spotNumber);
         player1.tokenPlacement = true;
         player2.tokenPlacement = false;
         //banner function to say who's turn it is
     }
     if(player2.tokenPlacement === false) {
-        topBanner.innerText = `${player1} picks and clicks a spot now.`
+        topBanner.innerText = `${player1.id} picks and clicks a spot now.`
         player2.squarePicker(spotNumber);
         player2.tokenPlacement = true;
         player1.tokenPlacement = false;
