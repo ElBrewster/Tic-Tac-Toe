@@ -8,6 +8,8 @@ var firstPlayerScore = document.querySelector("#firstPlayerScore");
 var secondPlayerScore = document.querySelector("#secondPlayerScore");
 var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelector("#buttonField");
+var player1NameInput = document.querySelector("#nickName1");
+var player2NameInput = document.querySelector("#nickName2");
 // --------------------------------------------------------
 var btn7 = document.querySelector("#numPad7");
 var btn8 = document.querySelector("#numPad8");
@@ -86,7 +88,7 @@ function updateBannerForActivePlayer() {
 
 function startBtnInit() {
     //buttons 1-9 activate (see endGame)
-    newGame = new Game();
+    newGame = new Game(player1NameInput.value, player2NameInput.value);
     topBanner.innerText = "Let's goooooo!";
     updateBannerForActivePlayer();
 }

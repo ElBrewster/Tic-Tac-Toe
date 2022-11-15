@@ -1,9 +1,9 @@
 
 class Game {
-    constructor() {
+    constructor(player1Name, player2Name) {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        this.player1 = new Player("me", "☝");
-        this.player2 = new Player("you", "😍");
+        this.player1 = new Player(player1Name, "☝");
+        this.player2 = new Player(player2Name, "😍");
         this.activePlayer = this.player1;
         this.gameNo = 0;
         this.winner = false;
@@ -106,4 +106,13 @@ class Game {
         this.player1.resetChosenSpots();
         this.player2.resetChosenSpots();
     }
+
+    getPlayer1Score() {
+        return this.player1.wins;
+    }
+
+    getPlayer2Score() {
+        return this.player2.wins;
+    }
 }
+
