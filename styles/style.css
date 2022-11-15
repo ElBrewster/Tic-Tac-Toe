@@ -46,19 +46,30 @@ main {
 form {
     height: 50%;
     width: 100%;
+    padding: 1em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
     justify-content: space-around;
-    background-color: antiquewhite;
+    background-color: rgb(74, 74, 74);
+    color: azure;
     
 }
 
-.submit-button,
 .user1,
 .user2 {
     width: 50%;
+    padding: 1em;
+    outline: none;
+    background-color: azure;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.user1:focus,
+.user2:focus {
+    width: 100%;
+    background-color: lightblue;
+    border: .3em solid rgb(163, 162, 162);
 }
 
 aside {
@@ -114,8 +125,9 @@ button {
     text-align: center;
     border: none;
     border-radius: 15px;
-    background-color: rgb(178, 119, 181);
-    box-shadow: 0 9px #999;
+    background-color: rgb(205, 151, 160);
+    box-shadow: 0 9px rgb(108, 72, 78);
+    font-family: 'Space Grotesk', sans-serif;
     cursor: pointer;
 }
 
@@ -169,8 +181,9 @@ button:focus {
         "button7 button8 button9"
         "button4 button5 button6"
         "button1 button2 button3";
-    gap: 2em;
-    background-color: rgb(162, 207, 239);    
+    gap: 2.5em;
+    background-color: rgb(74, 74, 74);
+ 
 }
 
 .numpad-Btns:hover {
@@ -180,16 +193,17 @@ button:focus {
 
 .numpad-Btns {
     font-size: xx-large;
-    color:rgb(12, 124, 31)
+    color:rgb(193, 104, 44)
 }
 
 .start-button {
     width: 10em;
     padding: 1em 2em;
+    font-size: medium;
 }
 
 .start-button:hover {
-    background-color: aqua;
+    background-color: rgb(250, 178, 178);
 }
 
 .start-button:active {
