@@ -10,21 +10,30 @@ class Game {
         this.draw = false;
     } 
 
+    getCurrentPlayerName() {
+        return this.activePlayer.id;
+    }
+    
     squarePicker(spotNumber) {
+        var token;
+        if (!this.boardPositions.includes(spotNumber)){
+            return null;
+        }
         for (var i = 0; i < this.boardPositions.length; i++) {
             if (spotNumber === this.boardPositions[i]) {
                 this.boardPositions.splice(i, 1);
                 this.activePlayer.chosenSpots.push(spotNumber); 
-                console.log(this.activePlayer.chosenSpots);
-                //solve turn switching on reselection of a spot that's unavailable
+                token = this.activePlayer.token;
             }
         }
+
         this.gameEndCheck();
         if (this.winner === true || this.draw === true) {
-            return;
+        return token;
         }
+
         this.switchActivePlayer();
-        
+        return token;
     }
 
     switchActivePlayer() {
@@ -80,6 +89,18 @@ class Game {
         }
     }
     
+    getWinner() {
+        if (this.winner === true) {
+            return this.activePlayer;
+        } else {
+            return null;
+        }
+    }
+
+    getTie() {
+        return this.draw;
+    }
+
     gameReset() {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     }
