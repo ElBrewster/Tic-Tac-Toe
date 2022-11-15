@@ -4,7 +4,6 @@ var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
 var secondPlayerScore = document.querySelector("#secondPlayerScore");
 var startBtn = document.querySelector("#startButton");
-var btnField = document.querySelector("#buttonField");
 var player1NameInput = document.querySelector("#nickName1");
 var player2NameInput = document.querySelector("#nickName2");
 var btn7 = document.querySelector("#numPad7");
@@ -16,7 +15,6 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
-var allNumPad = document.querySelectorAll(".numpadBtns");
 // --------------------------------------------------------
 window.addEventListener("load", disableNumpad);
 startBtn.addEventListener("click", startBtnInit);

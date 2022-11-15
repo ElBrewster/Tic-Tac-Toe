@@ -180,11 +180,11 @@ button:focus {
 } */
 
 
-.numpadBtns:hover {
+.numpad-Btns:hover {
     background-color: rgb(250, 178, 178);
     color: white;
 } 
-.numpadBtns {
+.numpad-Btns {
     font-size: xx-large;
     color:rgb(12, 124, 31)
 }
