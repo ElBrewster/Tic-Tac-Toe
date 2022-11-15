@@ -1,13 +1,7 @@
-var player1;
-var player2;
 var newGame;
+
 var spotNumber;
-// var player1 = new Player("Rex", "X");
-// var player2 = new Player("Lex", "O");
-// var newGame = new Game(player1, player2);
-var player1 = new Player("me", "☝");
-var player2 = new Player("you", "😍");
-var newGame = new Game(player1, player2);
+
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
@@ -51,18 +45,16 @@ function cosmeticClick() {
 //     alert("hi El");
 //     btn7.textContent = player1.token;
 // btn7.style.property = new style;
-}
+
 // --------------------------------------------------------
 
 function startBtnInit() {
     //buttons 1-9 activate
-    // var player1 = new Player("Rex", "X");
-    // var player2 = new Player("Lex", "O");
-    // var newGame = new Game(player1, player2);
+    newGame = new Game();
+    activePlayer = player1;
     topBanner.innerText = "Let's goooooo!";
     topBanner.innerText = `${player1.id} picks and clicks a spot now.`
     console.log(player1, player2, newGame);
-
 }
 
 function setPlayerTurn(player1, player2) {
@@ -84,6 +76,9 @@ function setPlayerTurn(player1, player2) {
 }
 
 function updateScoreSheet(player1, player2) {
+    topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
+    topBanner.innerText = "Game Over: Nobody Won!"
+
     if (player1.won === true) {
         firstPlayerScore.innerText = `First Player: ${player1.wins}`;
     }
