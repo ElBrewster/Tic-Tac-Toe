@@ -1,8 +1,5 @@
 var newGame;
-
-// var spotNumber;
-window.addEventListener("load", disableNumpad);
-// --------------------------------------------------------
+var timeout;
 var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
 var secondPlayerScore = document.querySelector("#secondPlayerScore");
@@ -10,7 +7,6 @@ var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelector("#buttonField");
 var player1NameInput = document.querySelector("#nickName1");
 var player2NameInput = document.querySelector("#nickName2");
-// --------------------------------------------------------
 var btn7 = document.querySelector("#numPad7");
 var btn8 = document.querySelector("#numPad8");
 var btn9 = document.querySelector("#numPad9");
@@ -21,11 +17,32 @@ var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
 var allNumPad = document.querySelectorAll(".numpadBtns");
-// --> use this for resest: allNumPad[i].innerText = default
 // --> maybe od a document.createElement for scores in our aside!
 // --------------------------------------------------------
+window.addEventListener("load", disableNumpad);
 startBtn.addEventListener("click", startBtnInit);
-// --------------------------------------------------------
+
+function startBtnInit() {
+    var timeout2;
+    enableNumpad();
+    resetTokensToNumpad();
+    newGame = new Game(player1NameInput.value, player2NameInput.value);
+    topBanner.innerText = "Let's goooooo!";
+    timeout2 = setTimeout(updateBannerForActivePlayer, 500);
+    // updateBannerForActivePlayer();
+}
+
+function pauseThenRestart() {
+    timeout = setTimeout(resetGameAfterTimeoutForCurrentPlayers, 5000);
+}
+
+function resetGameAfterTimeoutForCurrentPlayers() {
+    enableNumpad();
+    resetTokensToNumpad();
+    newGame.gameReset();
+    updateBannerForActivePlayer();
+}
+
 btn7.addEventListener("click", cosmeticClick7);
 function cosmeticClick7() {
     cosmeticClick(btn7, 7);
@@ -80,6 +97,17 @@ function cosmeticClick(spotButton, spotNumber) {
     }
 }
 
+function resetTokensToNumpad() {
+    btn7.textContent = 7;
+    btn8.textContent = 8;
+    btn9.textContent = 9;
+    btn4.textContent = 4;
+    btn5.textContent = 5;
+    btn6.textContent = 6;
+    btn1.textContent = 1;
+    btn2.textContent = 2;
+    btn3.textContent = 3;
+}
 function disableNumpad() {
     btn7.disabled = true;
     btn8.disabled = true;
@@ -91,14 +119,7 @@ function disableNumpad() {
     btn2.disabled = true;
     btn3.disabled = true;
 }
-
-function updateBannerForActivePlayer() {
-    var current = newGame.getCurrentPlayerName();
-    topBanner.innerText = `${current} picks and clicks a spot now.`
-}
-// --------------------------------------------------------
-
-function startBtnInit() {
+function enableNumpad() {
     btn7.disabled = false;
     btn8.disabled = false;
     btn9.disabled = false;
@@ -108,35 +129,35 @@ function startBtnInit() {
     btn1.disabled = false;
     btn2.disabled = false;
     btn3.disabled = false;
-    //add functionality to remove emojis when startBtnInit function is called
-    newGame = new Game(player1NameInput.value, player2NameInput.value);
-    topBanner.innerText = "Let's goooooo!";
-    // setTimeout(updateBannerForActivePlayer(), 5000);
-    updateBannerForActivePlayer();
 }
 
 function endGame(winningPlayerName) {
     disableNumpad();
     console.log(`${winningPlayerName} won!`)
     topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
-
+    pauseThenRestart()
+    
 }
 
 function tieGame() {
     disableNumpad();
     topBanner.innerText = "Game Over: Nobody Won!"
+    pauseThenRestart()
 }
-// end of game function that calls gameReset()
 
-
-function updateScoreSheet(player1, player2) {
-    topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
-    topBanner.innerText = "Game Over: Nobody Won!"
-
-    if (player1.won === true) {
-        firstPlayerScore.innerText = `First Player: ${player1.wins}`;
-    }
-    if (player2.won === true) {
-        secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
-    }
+function updateBannerForActivePlayer() {
+    var current = newGame.getCurrentPlayerName();
+    topBanner.innerText = `${current} picks and clicks a spot now.`
 }
+
+// function updateScoreSheet(player1, player2) {
+//     topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
+//     topBanner.innerText = "Game Over: Nobody Won!"
+
+//     if (player1.won === true) {
+//         firstPlayerScore.innerText = `First Player: ${player1.wins}`;
+//     }
+//     if (player2.won === true) {
+//         secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
+//     }
+// }
