@@ -23,24 +23,50 @@ var allNumPad = document.querySelectorAll(".numpadBtns");
 // --> maybe od a document.createElement for scores in our aside!
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
-
-// btnField.addEventListener("click", cosmeticClick);
+// --------------------------------------------------------
 btn7.addEventListener("click", cosmeticClick7);
-// btn8.addEventListener("click", cosmeticClick8);
-// btn9.addEventListener("click", cosmeticClick9);
-// btn4.addEventListener("click", cosmeticClick4);
-// btn5.addEventListener("click", cosmeticClick5);
-// btn6.addEventListener("click", cosmeticClick6);
-// btn1.addEventListener("click", cosmeticClick1);
-// btn2.addEventListener("click", cosmeticClick2);
-// btn3.addEventListener("click", cosmeticClick3);
-
 function cosmeticClick7() {
-    var tokenGrab = newGame.squarePicker(7);
+    cosmeticClick(btn7, 7);
+}
+btn8.addEventListener("click", cosmeticClick8);
+function cosmeticClick8() {
+    cosmeticClick(btn8, 8);
+}
+btn9.addEventListener("click", cosmeticClick9);
+function cosmeticClick9() {
+    cosmeticClick(btn9, 9);
+}
+btn4.addEventListener("click", cosmeticClick4);
+function cosmeticClick4() {
+    cosmeticClick(btn4, 4);
+}
+btn5.addEventListener("click", cosmeticClick5);
+function cosmeticClick5() {
+    cosmeticClick(btn5, 5);
+}
+btn6.addEventListener("click", cosmeticClick6);
+function cosmeticClick6() {
+    cosmeticClick(btn6, 6);
+}
+btn1.addEventListener("click", cosmeticClick1);
+function cosmeticClick1() {
+    cosmeticClick(btn1, 1);
+}
+btn2.addEventListener("click", cosmeticClick2);
+function cosmeticClick2() {
+    cosmeticClick(btn2, 2);
+}
+btn3.addEventListener("click", cosmeticClick3);
+function cosmeticClick3() {
+    cosmeticClick(btn3, 3);
+}
+
+function cosmeticClick(spotButton, spotNumber) {
+    var tokenGrab = newGame.squarePicker(spotNumber);
     if (tokenGrab === null) {
         return;
     }
-    btn7.textContent = tokenGrab;
+    spotButton.textContent = tokenGrab;
     var winningPlayer = newGame.getWinner();
     if (winningPlayer !== null) {
         endGame(winningPlayer.id);
