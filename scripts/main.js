@@ -79,7 +79,17 @@ function cosmeticClick(spotButton, spotNumber) {
         updateBannerForActivePlayer();
     }
 }
-
+function resetTokensToNumpad() {
+    btn7.textContent = 7;
+    btn8.textContent = 8;
+    btn9.textContent = 9;
+    btn4.textContent = 4;
+    btn5.textContent = 5;
+    btn6.textContent = 6;
+    btn1.textContent = 1;
+    btn2.textContent = 2;
+    btn3.textContent = 3;
+}
 function disableNumpad() {
     btn7.disabled = true;
     btn8.disabled = true;
@@ -91,14 +101,7 @@ function disableNumpad() {
     btn2.disabled = true;
     btn3.disabled = true;
 }
-
-function updateBannerForActivePlayer() {
-    var current = newGame.getCurrentPlayerName();
-    topBanner.innerText = `${current} picks and clicks a spot now.`
-}
-// --------------------------------------------------------
-
-function startBtnInit() {
+function enableNumpad() {
     btn7.disabled = false;
     btn8.disabled = false;
     btn9.disabled = false;
@@ -108,6 +111,17 @@ function startBtnInit() {
     btn1.disabled = false;
     btn2.disabled = false;
     btn3.disabled = false;
+}
+
+function updateBannerForActivePlayer() {
+    var current = newGame.getCurrentPlayerName();
+    topBanner.innerText = `${current} picks and clicks a spot now.`
+}
+// --------------------------------------------------------
+
+function startBtnInit() {
+    enableNumpad();
+    resetTokensToNumpad();
     //add functionality to remove emojis when startBtnInit function is called
     newGame = new Game(player1NameInput.value, player2NameInput.value);
     topBanner.innerText = "Let's goooooo!";
