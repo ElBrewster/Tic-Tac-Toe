@@ -119,8 +119,10 @@ function tieGame() {
 } 
 
 function scoreSheetUpdates() {
-    firstPlayerScore.innerText = `${newGame.player1.id}: ${newGame.player1.wins} wins!`
-    secondPlayerScore.innerText = `${newGame.player2.id}: ${newGame.player2.wins} wins!`
+    var currentScore1 = newGame.getPlayer1Score();
+    var currentScore2 = newGame.getPlayer2Score();
+    firstPlayerScore.innerText = `${newGame.player1.id}: ${currentScore1} wins!`
+    secondPlayerScore.innerText = `${newGame.player2.id}: ${currentScore2} wins!`
 }
 
 function updateBannerForActivePlayer() {

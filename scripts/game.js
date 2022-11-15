@@ -1,4 +1,3 @@
-
 class Game {
     constructor(player1Name, player2Name) {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -28,12 +27,10 @@ class Game {
                 token = this.activePlayer.token;
             }
         }
-
         this.gameEndCheck();
         if (this.winner === true || this.draw === true) {
         return token;
         }
-
         this.switchActivePlayer();
         return token;
     }
@@ -53,6 +50,7 @@ class Game {
             this.goesFirst = this.player1;
         }
     }
+
     gameEndCheck() {
         this.winEval();
         this.drawEval(); 
@@ -89,7 +87,6 @@ class Game {
             this.winner = true;
             this.activePlayer.increaseWins();
         }
-
     }
     
     drawEval() {
