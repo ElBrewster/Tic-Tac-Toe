@@ -1,3 +1,3 @@
 *** Find The Patterns ***
 
-* One of the goals of my tic-tac-toe game is to think about accessibility in games. The MDN website's page on the <button> tag (section "Proximity") discusses margins around buttons for folks who have hand tremors and I chose to include this thinking in my tic-tac-toe game by including margins on the player board.
+* I made a personal goal in tic-tac-toe game to think about accessibility in games in general. The MDN website's page on the <button> tag (section "Proximity") discusses margins around buttons for folks who have hand tremors and I chose to include this thinking in my tic-tac-toe game by including margins on the player board. I also made some functionality for tabbing through buttons to select with "enter" instead of cursor. While I don't think I was fully able to implement these accessibility features, I am happy that I started this conversation with myself and implemented partial accessibility features in the time allotted. 
