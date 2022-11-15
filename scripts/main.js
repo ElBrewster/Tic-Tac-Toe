@@ -1,16 +1,15 @@
-// var player1 = new Player("Rex", "X");
-// var player2 = new Player("Lex", "O");
-// var newGame = new Game(player1, player2);
-var player1;
-var player2;
 var newGame;
+
 var spotNumber;
+
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
 var secondPlayerScore = document.querySelector("#secondPlayerScore");
 var startBtn = document.querySelector("#startButton");
 var btnField = document.querySelector("#buttonField");
+var player1NameInput = document.querySelector("#nickName1");
+var player2NameInput = document.querySelector("#nickName2");
 // --------------------------------------------------------
 var btn7 = document.querySelector("#numPad7");
 var btn8 = document.querySelector("#numPad8");
@@ -21,79 +20,96 @@ var btn6 = document.querySelector("#numPad6");
 var btn1 = document.querySelector("#numPad1");
 var btn2 = document.querySelector("#numPad2");
 var btn3 = document.querySelector("#numPad3");
+var allNumPad = document.querySelectorAll(".numpadBtns");
+// --> use this for resest: allNumPad[i].innerText = default
+// --> maybe od a document.createElement for scores in our aside!
 // --------------------------------------------------------
 startBtn.addEventListener("click", startBtnInit);
-btnField.addEventListener("click", runSomething);
+// --------------------------------------------------------
+btn7.addEventListener("click", cosmeticClick7);
+function cosmeticClick7() {
+    cosmeticClick(btn7, 7);
+}
+btn8.addEventListener("click", cosmeticClick8);
+function cosmeticClick8() {
+    cosmeticClick(btn8, 8);
+}
+btn9.addEventListener("click", cosmeticClick9);
+function cosmeticClick9() {
+    cosmeticClick(btn9, 9);
+}
+btn4.addEventListener("click", cosmeticClick4);
+function cosmeticClick4() {
+    cosmeticClick(btn4, 4);
+}
+btn5.addEventListener("click", cosmeticClick5);
+function cosmeticClick5() {
+    cosmeticClick(btn5, 5);
+}
+btn6.addEventListener("click", cosmeticClick6);
+function cosmeticClick6() {
+    cosmeticClick(btn6, 6);
+}
+btn1.addEventListener("click", cosmeticClick1);
+function cosmeticClick1() {
+    cosmeticClick(btn1, 1);
+}
+btn2.addEventListener("click", cosmeticClick2);
+function cosmeticClick2() {
+    cosmeticClick(btn2, 2);
+}
+btn3.addEventListener("click", cosmeticClick3);
+function cosmeticClick3() {
+    cosmeticClick(btn3, 3);
+}
 
-function runSomething() {
-    var nineBtns = document.getElementsByClassName("numpadBtn");
-    for (var i = 0; i < nineBtns.length; i++) {
-        nineBtns[i].addEventListener("click", cosmeticClick);
-        console.log(nineBtns);
+function cosmeticClick(spotButton, spotNumber) {
+    var tokenGrab = newGame.squarePicker(spotNumber);
+    if (tokenGrab === null) {
+        return;
+    }
+    spotButton.textContent = tokenGrab;
+    var winningPlayer = newGame.getWinner();
+    if (winningPlayer !== null) {
+        endGame(winningPlayer.id);
+        
+    } else if (newGame.getTie()) {
+        tieGame();
+    } else {
+        updateBannerForActivePlayer();
     }
 }
 
-// btnField.addEventListener("click", cosmeticClick);
-// btn7.addEventListener("click", cosmeticClick);
-// btn8.addEventListener("click", cosmeticClick);
-// btn9.addEventListener("click", cosmeticClick);
-// btn4.addEventListener("click", cosmeticClick);
-// btn5.addEventListener("click", cosmeticClick);
-// btn6.addEventListener("click", cosmeticClick);
-// btn1.addEventListener("click", cosmeticClick);
-// btn2.addEventListener("click", cosmeticClick);
-// btn3.addEventListener("click", cosmeticClick);
-
-function cosmeticClick(player1) {
-    alert("hi El");
-    btn7.textContent = player1.token;
-    // btn7.style.property = new style;
+function updateBannerForActivePlayer() {
+    var current = newGame.getCurrentPlayerName();
+    topBanner.innerText = `${current} picks and clicks a spot now.`
 }
 // --------------------------------------------------------
 
 function startBtnInit() {
-    //this starts my game
-    //buttons 1-9 activate
-    var player1 = new Player("Rex", "X");
-    // "&#128566"
-    var player2 = new Player("Lex", "O");
-    var newGame = new Game(player1, player2);
-    // "&#128565"
-    // newGame.gameNo++;
-    //banner announcement
+    //buttons 1-9 activate (see endGame)
+    newGame = new Game(player1NameInput.value, player2NameInput.value);
     topBanner.innerText = "Let's goooooo!";
-    //we need a pause here somehow before player turn is announced
-    topBanner.innerText = `${player1.id} picks and clicks a spot now.`
+    updateBannerForActivePlayer();
+}
 
-    console.log(player1, player2, newGame);
+function endGame(winningPlayerName) {
+    //disable all buttons execept start
+    console.log(`${winningPlayerName} won!`)
+    topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
 
 }
 
-// function turnStart(player1, player2) {
-//     topBanner.innerText = `${player1} picks and clicks a spot now.`;
-//     newGame.setPlayerTurn(player1, player2);
-// }
-
-function setPlayerTurn(player1, player2) {
-    var spotNumber;
-    if(player1.tokenPlacement === false) {
-        topBanner.innerText = `${player1.id} picks and clicks a spot now.`
-        player1.squarePicker(spotNumber);
-        player1.tokenPlacement = true;
-        player2.tokenPlacement = false;
-        //banner function to say who's turn it is
-    }
-    if(player2.tokenPlacement === false) {
-        topBanner.innerText = `${player1.id} picks and clicks a spot now.`
-        player2.squarePicker(spotNumber);
-        player2.tokenPlacement = true;
-        player1.tokenPlacement = false;
-        //banner function to say who's turn it is
-    }
-    console.log(player1, player2);
+function tieGame() {
+    //disable all buttons except start
+    topBanner.innerText = "Game Over: Nobody Won!"
 }
+// end of game function that calls gameReset()
 
 function updateScoreSheet(player1, player2) {
+    topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
+    topBanner.innerText = "Game Over: Nobody Won!"
+
     if (player1.won === true) {
         firstPlayerScore.innerText = `First Player: ${player1.wins}`;
     }
@@ -101,31 +117,3 @@ function updateScoreSheet(player1, player2) {
         secondPlayerScore.innerText = `Second Player: ${player2.wins}`;
     }
 }
-
-function otherGameResetFunction() {
-    console.log(timeout);
-}
-
-function bannerUpdate () {
-    //this is more for record-keeping
-    topBanner.innerText = "Let's goooooo!"
-    topBanner.innerText = `${player1} picks and clicks a spot now.`
-    topBanner.innerText = "Game Over: Nobody Won!"
-    topBanner.innerText = `Hey yea! ${player1} wins this one!`
-    //on second draw: "Maybe bribe your friend with sweets to let you win!" and so on
-    //"What if you took turns planning to win?"
-    //"Tic tac toe has garbage gameplay design, learn social engineering to get the results you want"
-    //"I bet you wish you were playing chess!"
-    //"Take a sharpie and draw a 'cat's tail' on this thing!"
-    console.log(bannerstuff);
-}
-//HTML emoji stuf: lightning 9889 star11088 diamond 128142 explosion128165
-//explosion speech bubble 128495 siren 128680
-//point left arrow
-//128566 face without mouth
-//128565	 face with x eyes
-function whatever() {
-    // alert("hi El");
-    //how do I attach specific variable to these eventListeners? or what even am I doing here?
-    console.log(newGame);
-} 
