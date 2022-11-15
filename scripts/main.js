@@ -120,8 +120,8 @@ function scoreSheetUpdates() {
     var currentScore2 = newGame.getPlayer2Score();
     var currentNickname1 = newGame.getCurrentNicknamePlayer1();
     var currentNickname2 = newGame.getCurrentNicknamePlayer2();
-    firstPlayerScore.innerText = `${currentNickname1}: ${currentScore1} wins!`
-    secondPlayerScore.innerText = `${currentNickname2}: ${currentScore2} wins!`
+    firstPlayerScore.innerText = `${currentNickname1} has ${currentScore1} wins!`
+    secondPlayerScore.innerText = `${currentNickname2} has ${currentScore2} wins!`
 }
 
 function updateBannerForActivePlayer() {
