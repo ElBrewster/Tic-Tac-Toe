@@ -2,17 +2,6 @@ var newGame;
 
 // var spotNumber;
 window.addEventListener("load", disableNumpad);
-function disableNumpad() {
-    btn7.disabled = true;
-    btn8.disabled = true;
-    btn9.disabled = true;
-    btn4.disabled = true;
-    btn5.disabled = true;
-    btn6.disabled = true;
-    btn1.disabled = true;
-    btn2.disabled = true;
-    btn3.disabled = true;
-}
 // --------------------------------------------------------
 var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
@@ -91,6 +80,18 @@ function cosmeticClick(spotButton, spotNumber) {
     }
 }
 
+function disableNumpad() {
+    btn7.disabled = true;
+    btn8.disabled = true;
+    btn9.disabled = true;
+    btn4.disabled = true;
+    btn5.disabled = true;
+    btn6.disabled = true;
+    btn1.disabled = true;
+    btn2.disabled = true;
+    btn3.disabled = true;
+}
+
 function updateBannerForActivePlayer() {
     var current = newGame.getCurrentPlayerName();
     topBanner.innerText = `${current} picks and clicks a spot now.`
@@ -107,7 +108,7 @@ function startBtnInit() {
     btn1.disabled = false;
     btn2.disabled = false;
     btn3.disabled = false;
-    //buttons 1-9 activate (see endGame)
+    //add functionality to remove emojis when startBtnInit function is called
     newGame = new Game(player1NameInput.value, player2NameInput.value);
     topBanner.innerText = "Let's goooooo!";
     // setTimeout(updateBannerForActivePlayer(), 5000);
@@ -115,33 +116,14 @@ function startBtnInit() {
 }
 
 function endGame(winningPlayerName) {
-    //disable all buttons execept start
-    btn7.disabled = true;
-    btn8.disabled = true;
-    btn9.disabled = true;
-    btn4.disabled = true;
-    btn5.disabled = true;
-    btn6.disabled = true;
-    btn1.disabled = true;
-    btn2.disabled = true;
-    btn3.disabled = true;
-
+    disableNumpad();
     console.log(`${winningPlayerName} won!`)
     topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
 
 }
 
 function tieGame() {
-    btn7.disabled = true;
-    btn8.disabled = true;
-    btn9.disabled = true;
-    btn4.disabled = true;
-    btn5.disabled = true;
-    btn6.disabled = true;
-    btn1.disabled = true;
-    btn2.disabled = true;
-    btn3.disabled = true;
-    //disable all buttons except start
+    disableNumpad();
     topBanner.innerText = "Game Over: Nobody Won!"
 }
 // end of game function that calls gameReset()
