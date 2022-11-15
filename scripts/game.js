@@ -57,7 +57,6 @@ class Game {
         this.activePlayer.chosenSpots.sort();
         var chosenSpots1 = this.activePlayer.chosenSpots.join("");
         var spotsStr = chosenSpots1.toString();
-        console.log(spotsStr);
         if(spotsStr.includes("1") && spotsStr.includes("2") && spotsStr.includes("3")) {
             this.winner = true;
             this.activePlayer.increaseWins();

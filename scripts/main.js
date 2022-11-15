@@ -104,7 +104,6 @@ function cosmeticClick(spotButton, spotNumber) {
 function endGame(winningPlayerName) {
     disableNumpad();
     scoreSheetUpdates();
-    console.log(`${winningPlayerName} won!`)
     topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
     pauseThenRestart()
 }
