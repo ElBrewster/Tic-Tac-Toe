@@ -15,6 +15,13 @@ class Game {
         return this.activePlayer.id;
     }
 
+    getCurrentNicknamePlayer1() {
+        return this.player1.id;
+    }
+    
+    getCurrentNicknamePlayer2() {
+        return this.player2.id;
+    }
     squarePicker(spotNumber) {
         var token;
         if (!this.boardPositions.includes(spotNumber)){
