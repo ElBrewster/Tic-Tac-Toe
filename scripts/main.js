@@ -23,12 +23,13 @@ window.addEventListener("load", disableNumpad);
 startBtn.addEventListener("click", startBtnInit);
 
 function startBtnInit() {
+    var timeout2;
     enableNumpad();
     resetTokensToNumpad();
     newGame = new Game(player1NameInput.value, player2NameInput.value);
     topBanner.innerText = "Let's goooooo!";
-    // setTimeout(updateBannerForActivePlayer(), 5000);
-    updateBannerForActivePlayer();
+    timeout2 = setTimeout(updateBannerForActivePlayer, 500);
+    // updateBannerForActivePlayer();
 }
 
 function pauseThenRestart() {
