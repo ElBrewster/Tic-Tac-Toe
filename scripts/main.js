@@ -1,4 +1,5 @@
 var newGame;
+var timeout;
 var topBanner = document.querySelector("#topBanner");
 var firstPlayerScore = document.querySelector("#firstPlayerScore");
 var secondPlayerScore = document.querySelector("#secondPlayerScore");
@@ -30,6 +31,9 @@ function startBtnInit() {
     updateBannerForActivePlayer();
 }
 
+function pauseThenRestart() {
+    timeout = setTimeout(resetGameAfterTimeoutForCurrentPlayers, 5000);
+}
 
 function resetGameAfterTimeoutForCurrentPlayers() {
     enableNumpad();
@@ -126,19 +130,19 @@ function enableNumpad() {
     btn3.disabled = false;
 }
 
-
 function endGame(winningPlayerName) {
     disableNumpad();
     console.log(`${winningPlayerName} won!`)
     topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
+    pauseThenRestart()
     
 }
 
 function tieGame() {
     disableNumpad();
     topBanner.innerText = "Game Over: Nobody Won!"
+    pauseThenRestart()
 }
-// end of game function that calls gameReset()
 
 function updateBannerForActivePlayer() {
     var current = newGame.getCurrentPlayerName();
