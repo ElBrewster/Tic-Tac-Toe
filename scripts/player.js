@@ -11,4 +11,8 @@ class Player {
     increaseWins() {
         this.wins++;
     }
+
+    resetChosenSpots() {
+        this.chosenSpots = [];
+    }
 }

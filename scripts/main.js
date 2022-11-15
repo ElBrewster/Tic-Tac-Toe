@@ -70,11 +70,12 @@ function cosmeticClick(spotButton, spotNumber) {
     var winningPlayer = newGame.getWinner();
     if (winningPlayer !== null) {
         endGame(winningPlayer.id);
-    }
-    if (newGame.getTie()) {
+        
+    } else if (newGame.getTie()) {
         tieGame();
+    } else {
+        updateBannerForActivePlayer();
     }
-    updateBannerForActivePlayer();
 }
 
 function updateBannerForActivePlayer() {
@@ -92,15 +93,17 @@ function startBtnInit() {
 
 function endGame(winningPlayerName) {
     //disable all buttons execept start
+    console.log(`${winningPlayerName} won!`)
     topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
 
 }
-// topBanner.innerText = `${player1.id} picks and clicks a spot now.`
+
 function tieGame() {
     //disable all buttons except start
     topBanner.innerText = "Game Over: Nobody Won!"
 }
 // end of game function that calls gameReset()
+
 function updateScoreSheet(player1, player2) {
     topBanner.innerText = `Hey yea! ${player1.id} wins this one!`
     topBanner.innerText = "Game Over: Nobody Won!"
