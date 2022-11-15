@@ -11,17 +11,6 @@ class Game {
     
     } 
 
-    getCurrentPlayerName() {
-        return this.activePlayer.id;
-    }
-
-    getCurrentNicknamePlayer1() {
-        return this.player1.id;
-    }
-    
-    getCurrentNicknamePlayer2() {
-        return this.player2.id;
-    }
     squarePicker(spotNumber) {
         var token;
         if (!this.boardPositions.includes(spotNumber)){
@@ -36,12 +25,12 @@ class Game {
         }
         this.gameEndCheck();
         if (this.winner === true || this.draw === true) {
-        return token;
+            return token;
         }
         this.switchActivePlayer();
         return token;
     }
-
+    
     switchActivePlayer() {
         if (this.activePlayer === this.player1) {
             this.activePlayer = this.player2;
@@ -49,7 +38,7 @@ class Game {
             this.activePlayer = this.player1;
         }
     }
-
+    
     switchWhoGoesFirst() {
         if (this.goesFirst === this.player1) {
             this.goesFirst = this.player2;
@@ -57,11 +46,11 @@ class Game {
             this.goesFirst = this.player1;
         }
     }
-
+    
     gameEndCheck() {
         this.winEval();
         this.drawEval(); 
-    
+        
     }
     
     winEval() {
@@ -102,18 +91,6 @@ class Game {
         }
     }
     
-    getWinner() {
-        if (this.winner === true) {
-            return this.activePlayer;
-        } else {
-            return null;
-        }
-    }
-
-    getTie() {
-        return this.draw;
-    }
-
     gameReset() {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.player1.resetChosenSpots();
@@ -123,13 +100,37 @@ class Game {
         this.winner = false;
         this.draw = false;
     }
+    
+    getCurrentPlayerName() {
+        return this.activePlayer.id;
+    }
+    
+    getCurrentNicknamePlayer1() {
+        return this.player1.id;
+    }
+    
+    getCurrentNicknamePlayer2() {
+        return this.player2.id;
+    }
 
     getPlayer1Score() {
         return this.player1.wins;
     }
-
+    
     getPlayer2Score() {
         return this.player2.wins;
+    }
+
+    getWinner() {
+        if (this.winner === true) {
+            return this.activePlayer;
+        } else {
+            return null;
+        }
+    }
+    
+    getTie() {
+        return this.draw;
     }
 }
 
