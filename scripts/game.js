@@ -5,9 +5,11 @@ class Game {
         this.player1 = new Player(player1Name, "☝");
         this.player2 = new Player(player2Name, "😍");
         this.activePlayer = this.player1;
-        this.gameNo = 0;
+        this.goesFirst = this.player1;
+        // this.gameNo = 0;
         this.winner = false;
         this.draw = false;
+    
     } 
 
     getCurrentPlayerName() {
@@ -44,6 +46,13 @@ class Game {
         }
     }
 
+    switchWhoGoesFirst() {
+        if (this.goesFirst === this.player1) {
+            this.goesFirst = this.player2;
+        } else if (this.goesFirst === this.player2) {
+            this.goesFirst = this.player1;
+        }
+    }
     gameEndCheck() {
         this.winEval();
         this.drawEval(); 
@@ -105,6 +114,10 @@ class Game {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.player1.resetChosenSpots();
         this.player2.resetChosenSpots();
+        this.switchWhoGoesFirst();
+        this.activePlayer = this.goesFirst;
+        this.winner = false;
+        this.draw = false;
     }
 
     getPlayer1Score() {
