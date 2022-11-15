@@ -22,6 +22,11 @@ var allNumPad = document.querySelectorAll(".numpadBtns");
 window.addEventListener("load", disableNumpad);
 startBtn.addEventListener("click", startBtnInit);
 
+function scoreSheetUpdates() {
+    firstPlayerScore.innerText = `${newGame.player1.id}: ${newGame.player1.wins} wins!`
+    secondPlayerScore.innerText = `${newGame.player2.id}: ${newGame.player2.wins} wins!`
+}
+
 function startBtnInit() {
     var timeout2;
     enableNumpad();
@@ -133,6 +138,7 @@ function enableNumpad() {
 
 function endGame(winningPlayerName) {
     disableNumpad();
+    scoreSheetUpdates();
     console.log(`${winningPlayerName} won!`)
     topBanner.innerText = `Hey yea! ${winningPlayerName} wins this one!`
     pauseThenRestart()
@@ -141,6 +147,7 @@ function endGame(winningPlayerName) {
 
 function tieGame() {
     disableNumpad();
+    scoreSheetUpdates();
     topBanner.innerText = "Game Over: Nobody Won!"
     pauseThenRestart()
 }
