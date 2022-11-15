@@ -51,8 +51,11 @@ form {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    background-color: antiquewhite;
+    background-color: rgb(74, 74, 74);
+    color: azure;
     
+}
+.nickname {
 }
 
 .user1,
@@ -178,8 +181,9 @@ button:focus {
         "button7 button8 button9"
         "button4 button5 button6"
         "button1 button2 button3";
-    gap: 2em;
-    background-color: rgb(162, 207, 239);    
+    gap: 2.5em;
+    background-color: rgb(74, 74, 74);
+ 
 }
 
 .numpad-Btns:hover {
