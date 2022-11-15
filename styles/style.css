@@ -46,19 +46,28 @@ main {
 form {
     height: 50%;
     width: 100%;
+    padding: 1em;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    align-content: center;
     justify-content: space-around;
     background-color: antiquewhite;
     
 }
 
-.submit-button,
 .user1,
 .user2 {
     width: 50%;
+    padding: 1em;
+    outline: none;
+    background-color: azure;
+}
+
+.user1:focus,
+.user2:focus {
+    width: 100%;
+    background-color: lightblue;
+    border: .3em solid rgb(163, 162, 162);
 }
 
 aside {
