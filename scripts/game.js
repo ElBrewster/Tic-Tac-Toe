@@ -4,7 +4,7 @@ class Game {
         this.boardPositions = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         this.player1 = new Player("me", "☝");
         this.player2 = new Player("you", "😍");
-        this.activePlayer = player1;
+        this.activePlayer = this.player1;
         this.gameNo = 0;
         this.winner = false;
         this.draw = false;
@@ -13,7 +13,7 @@ class Game {
     getCurrentPlayerName() {
         return this.activePlayer.id;
     }
-    
+
     squarePicker(spotNumber) {
         var token;
         if (!this.boardPositions.includes(spotNumber)){

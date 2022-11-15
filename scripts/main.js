@@ -86,10 +86,8 @@ function updateBannerForActivePlayer() {
 function startBtnInit() {
     //buttons 1-9 activate (see endGame)
     newGame = new Game();
-    activePlayer = player1;
     topBanner.innerText = "Let's goooooo!";
     updateBannerForActivePlayer();
-    console.log(player1, player2, newGame);
 }
 
 function endGame(winningPlayerName) {
