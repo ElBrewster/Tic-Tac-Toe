@@ -7,6 +7,7 @@ This project is a simple browser game that allows two players to play the classi
 * Enter the respective directory in the terminal. Then type open index.html to open the website in an Internet browser.​
 
 ### Preview of Game:
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/113723085/202055795-c457cf6d-26e5-4a7d-9436-5c07950a372e.gif)
 
 ### Context:
 I am on week six of the Turing coding bootcamp program. This is the first game I have made. I thought it was a very interesting experience to start from nothing. There were no provided files or repo to fork and clone to my machine. Guidelines were more general and we were not given code iterations to follow. The total time allowance for the project was about 7 days.
