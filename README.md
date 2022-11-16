@@ -3,12 +3,13 @@
 This project is a simple browser game that allows two players to play the classic game "tic-tac-toe". Each player places an emoji token on their chosen spot, here shown in the number keys format on a keyboard. There are inputs to personalize player1 and player2 so that scores and banner communications provide given nicknames.
 
 ### Installation Instructions:
-Clone down the repo using GitHub. GitHub provides a link which can be used in the terminal after typing github clone <cloned link from GitHub>. 2. Enter the respective directory in the terminal. Then type open index.html to open the website in an Internet browser.​
+* Clone down the repo using GitHub. GitHub provides a link which can be used in the terminal after typing github clone <cloned link from GitHub>. 
+* Enter the respective directory in the terminal. Then type open index.html to open the website in an Internet browser.​
 
 ### Preview of Game:
 
 ### Context:
-I am on week six of the Turing coding bootcamp program. This is the first game I have made. I thought it was a very interesting experience to start from nothing. There were no provided files or repo to fork and clone to my machine. The total time allowance for the project was about 7 days.
+I am on week six of the Turing coding bootcamp program. This is the first game I have made. I thought it was a very interesting experience to start from nothing. There were no provided files or repo to fork and clone to my machine. Guidelines were more general and we were not given code iterations to follow. The total time allowance for the project was about 7 days.
 
 ### Contributors:
 I am the sole contributor:
