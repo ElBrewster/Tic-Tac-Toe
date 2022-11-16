@@ -23,6 +23,9 @@ Solidify and demonstrate your understanding of:
 * Iterate through/filter DOM elements using for loops
 * Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
 
+# Technology Used:
+The HTML, CSS and JavaScript for this application was written in VS Code and pushed into GitHub.
+
 ### Wins + Challenges:
 I was really excited to make a small piece of architecture and see it through to the final stages. My initial idea to solve the problem "How do I make tic-tac-toe playable using a player class, game class and main.js file?" was to create a game array and then to have each player take numbers from the game array and store them in their own array. My hope was that by removing these numbers(positions) a player could no longer select that position. This stayed true for my data model from beginning to end because of the way I designed my architecture at the begining. This was really satisfying! I call it a win.
 
